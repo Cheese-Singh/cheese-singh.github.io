@@ -180,8 +180,6 @@
     section:nth-of-type(2) { animation-delay: 0.2s; }
     section:nth-of-type(3) { animation-delay: 0.3s; }
     section:nth-of-type(4) { animation-delay: 0.4s; }
-    section:nth-of-type(5) { animation-delay: 0.5s; }
-    section:nth-of-type(6) { animation-delay: 0.6s; }
 
     .section-label {
       font-family: 'DM Mono', monospace;
@@ -213,7 +211,6 @@
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 0.5rem;
-      gap: 0.75rem;
     }
 
     .proj-name {
@@ -232,7 +229,6 @@
       background: var(--tag-bg);
       color: var(--tag-text);
       letter-spacing: 0.04em;
-      white-space: nowrap;
     }
 
     .proj-badge.flagship {
@@ -246,15 +242,6 @@
       color: var(--text-secondary);
       line-height: 1.65;
       margin-bottom: 1rem;
-    }
-
-    .proj-desc ul {
-      margin: 0.5rem 0 0 1.1rem;
-      padding: 0;
-    }
-
-    .proj-desc li {
-      margin-bottom: 0.35rem;
     }
 
     .proj-stack {
@@ -281,10 +268,7 @@
       background: var(--surface);
       border: 0.5px solid var(--border);
       border-left: 2px solid var(--info-border);
-      margin-bottom: 0.75rem;
     }
-
-    .pub-card:last-child { margin-bottom: 0; }
 
     .pub-title {
       font-size: 14px;
@@ -301,13 +285,6 @@
       margin-bottom: 0.6rem;
     }
 
-    .pub-desc {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      margin-bottom: 0.6rem;
-    }
-
     .pub-status {
       display: inline-block;
       font-family: 'DM Mono', monospace;
@@ -318,37 +295,6 @@
       background: var(--status-bg);
       color: var(--status-text);
       letter-spacing: 0.04em;
-    }
-
-    /* ACCOMPLISHMENTS */
-    .accomplishments-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .accomplishment-item {
-      display: flex;
-      align-items: baseline;
-      gap: 0.6rem;
-      padding: 0.85rem 1rem;
-      background: var(--surface);
-      border: 0.5px solid var(--border);
-      border-radius: 10px;
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-
-    .accomplishment-item::before {
-      content: "—";
-      color: var(--text-tertiary);
-      flex-shrink: 0;
-    }
-
-    .accomplishment-item strong {
-      color: var(--text-primary);
-      font-weight: 500;
     }
 
     /* ABOUT GRID */
@@ -460,15 +406,13 @@
           <span class="proj-name">Gwen</span>
           <span class="proj-badge flagship">Flagship</span>
         </div>
-        <p class="proj-desc">Fully local, privacy-first voice AI assistant for Apple Silicon (MacBook, iPhone, Apple Watch). Speaker-verified, multi-tier, multimodal — a 15-stage build from tensor fundamentals to a full voice-driven system agent. 4-tier model routing (Qwen2.5-1.5B → Qwen3.5-9B → Gemma4b:cloud → Kimi-K2.7-Code:cloud via Ollama Cloud) with automatic cloud-to-local fallback. Speaker verification and voice authentication via an ECAPA-TDNN model, plus WebRTC AEC3 echo cancellation for full-duplex, barge-in-capable conversation. Multimodal I/O includes local image generation (4-bit ZImageTurbo) and image/PDF/DOCX understanding and generation, with a novel query-routing system for grounding responses and reducing hallucination.</p>
+        <p class="proj-desc">Fully local, privacy-first voice AI assistant for Apple Silicon (MacBook, iPhone, Apple Watch). Voice input → MLX-Whisper transcription → tiered LLM inference with tool-calling → MLX-audio TTS output, with speaker verification (ECAPA-TDNN) and full-duplex, barge-in-capable conversation via WebRTC echo cancellation. A 4-tier model router balances on-device and cloud inference for latency, cost, and quality, and a novel query-routing layer grounds responses to reduce hallucination. Multimodal I/O extends to local image generation and image/PDF/DOCX understanding. Zero cloud dependency for the core loop — cloud is opt-in fallback only.</p>
         <div class="proj-stack">
-          <span class="tag">MLX / MLX-LM</span>
-          <span class="tag">MLX-VLM</span>
+          <span class="tag">MLX Swift</span>
           <span class="tag">MLX-Whisper</span>
-          <span class="tag">MLX-audio (Kokoro-82M)</span>
+          <span class="tag">MLX-audio</span>
           <span class="tag">SpeechBrain</span>
-          <span class="tag">Ollama Cloud</span>
-          <span class="tag">mflux</span>
+          <span class="tag">Tool-calling</span>
           <span class="tag">SwiftUI</span>
           <span class="tag">Apple Silicon</span>
         </div>
@@ -476,17 +420,16 @@
 
       <div class="project-card">
         <div class="proj-top">
-          <span class="proj-name">Automated Fungal Keratitis Diagnosis</span>
-          <span class="proj-badge">Research · PGI-MER</span>
+          <span class="proj-name">Fungal Keratitis Diagnosis</span>
+          <span class="proj-badge flagship">PGI-MER</span>
         </div>
-        <p class="proj-desc">End-to-end computer vision system for screening fungal keratitis, a severe corneal infection, using In Vivo Confocal Microscopy images and patient risk-factor history - built with a 3-person team for PGI-MER. Led system architecture and planning, and built the LLM-based summary layer translating model outputs and risk factors into clinician-readable diagnostic summaries. Stacked ensemble classifier (Mixture of Experts + Snapshot Ensemble of Random Forests) benchmarked across seven image-processing pipelines, reaching ~99–100% accuracy on held-out test data.</p>
+        <p class="proj-desc">Computer vision system for screening fungal keratitis from In Vivo Confocal Microscopy images and patient risk factors, built with a 3-person team in partnership with PGI-MER. Led system architecture and the LLM-based layer that turns model outputs into clinician-readable summaries. Stacked ensemble classifier reaching ~99–100% accuracy on held-out data.</p>
         <div class="proj-stack">
           <span class="tag">Python</span>
           <span class="tag">FastAPI</span>
-          <span class="tag">Scikit-learn</span>
           <span class="tag">OpenCV</span>
+          <span class="tag">Scikit-learn</span>
           <span class="tag">React</span>
-          <span class="tag">Ollama</span>
         </div>
       </div>
 
@@ -512,7 +455,7 @@
           <span class="proj-name">Ollama Agentic Series</span>
           <span class="proj-badge">Systems</span>
         </div>
-        <p class="proj-desc">Local LLM inference series progressing from single-turn generation through multimodal VLM input, multi-turn chat with think-block stripping, and a full agentic function-calling loop with CSV-backed inventory. Final script builds a CLI for Modelfile lifecycle management, model validation, and automated prompt benchmarking with structured report generation.</p>
+        <p class="proj-desc">Local LLM inference series progressing from single-turn generation through multimodal VLM input, multi-turn chat with think-block stripping, and a full agentic function-calling loop with CSV-backed inventory.</p>
         <div class="proj-stack">
           <span class="tag">Ollama</span>
           <span class="tag">Function calling</span>
@@ -523,24 +466,10 @@
 
       <div class="project-card">
         <div class="proj-top">
-          <span class="proj-name">ML Foundations</span>
-          <span class="proj-badge">Learning</span>
-        </div>
-        <p class="proj-desc">Classical ML from scratch, one concept per script: multi-classifier comparison (KNN, SVM, Decision Tree), SVM decision boundary visualisation across kernels and C values, and an automated EDA pipeline generating correlation heatmaps and histograms for any CSV. Includes a full sklearn preprocessing pipeline (Pipeline + ColumnTransformer) with zero manual cleaning, demonstrated on the Titanic dataset, plus a PCA vs. t-SNE interactive comparison on Fashion-MNIST built with Plotly.</p>
-        <div class="proj-stack">
-          <span class="tag">Scikit-learn</span>
-          <span class="tag">Plotly</span>
-          <span class="tag">Pandas</span>
-          <span class="tag">Matplotlib</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="proj-top">
           <span class="proj-name">Research ML Pipeline</span>
           <span class="proj-badge">Research</span>
         </div>
-        <p class="proj-desc">CatBoost regression pipeline predicting supercapacitor capacitance from material, synthesis, and electrolyte features. LOOCV evaluation with diagnostic plots, residual analysis, and feature importance. Companion to co-authored Elsevier review. Also includes a research trend analyser querying the OpenAlex API to track yearly publication volume for any topic.</p>
+        <p class="proj-desc">CatBoost regression pipeline predicting supercapacitor capacitance from material, synthesis, and electrolyte features. LOOCV evaluation with diagnostic plots, residual analysis, and feature importance. Companion to co-authored Elsevier review.</p>
         <div class="proj-stack">
           <span class="tag">CatBoost</span>
           <span class="tag">LOOCV</span>
@@ -553,30 +482,9 @@
     <section id="research">
       <div class="section-label">Research</div>
       <div class="pub-card">
-        <div class="pub-title">Interface-Driven Electrochemical Performance of Hybrid MXenes for High-Performance Supercapacitors: Insights and Challenges</div>
-        <div class="pub-venue">Co-authored review · Submitted to Elsevier · 2026</div>
-        <p class="pub-desc">Interdisciplinary review written with a PhD scholar under faculty supervision. Independently authored the AI methodology section, building ML regression models to analyse electrochemical performance data.</p>
+        <div class="pub-title">Current Trends in MXenes and their Hybrids for Next-Generation Supercapacitor Applications</div>
+        <div class="pub-venue">Co-authored review · Elsevier · 2026</div>
         <span class="pub-status">Under review</span>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="section-label">Experience</div>
-      <div class="pub-card">
-        <div class="pub-title">Research Intern — Punjab Engineering College</div>
-        <div class="pub-venue">Chandigarh, India · Mar 2025 – Jul 2025</div>
-        <p class="pub-desc">Conducted literature reviews for an interdisciplinary AI + materials science project spanning supercapacitor electrochemistry and ML-based performance prediction. Independently authored the AI methodology section of a co-authored review submitted to Elsevier, implementing a CatBoost regression pipeline with LOOCV evaluation. Collaborated with a PhD scholar and faculty from the Computer Science and Physics departments.</p>
-      </div>
-    </section>
-
-    <section id="accomplishments">
-      <div class="section-label">Accomplishments</div>
-      <div class="accomplishments-list">
-        <div class="accomplishment-item"><span><strong>Finalist</strong>, Amazon ML Summer School 2026</span></div>
-        <div class="accomplishment-item"><span><strong>98.8 percentile</strong>, JEE Mains 2024</span></div>
-        <div class="accomplishment-item"><span>Published — <strong>"Solar-Powered Mobile Phones: The Future of Sustainable Energy"</strong>, The Tribune (2023)</span></div>
-        <div class="accomplishment-item"><span><strong>Third Place</strong>, Intra-college Robosoccer Competition</span></div>
-        <div class="accomplishment-item"><span>Participant, <strong>Smart India Hackathon (SIH) 2024</strong></span></div>
       </div>
     </section>
 
