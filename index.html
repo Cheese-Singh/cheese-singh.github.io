@@ -237,6 +237,12 @@
       border: 0.5px solid var(--info-border);
     }
 
+    .proj-badge.in-progress {
+      background: transparent;
+      color: var(--text-tertiary);
+      border: 0.5px dashed var(--border-hover);
+    }
+
     .proj-desc {
       font-size: 13px;
       color: var(--text-secondary);
@@ -404,7 +410,10 @@
       <div class="project-card">
         <div class="proj-top">
           <span class="proj-name">Gwen</span>
-          <span class="proj-badge flagship">Flagship</span>
+          <span style="display:flex; gap:6px;">
+            <span class="proj-badge flagship">Flagship</span>
+            <span class="proj-badge in-progress">In Progress</span>
+          </span>
         </div>
         <p class="proj-desc">Fully local, privacy-first voice AI assistant for Apple Silicon (MacBook, iPhone, Apple Watch). Voice input → MLX-Whisper transcription → tiered LLM inference with tool-calling → MLX-audio TTS output, with speaker verification (ECAPA-TDNN) and full-duplex, barge-in-capable conversation via WebRTC echo cancellation. A 4-tier model router balances on-device and cloud inference for latency, cost, and quality, and a novel query-routing layer grounds responses to reduce hallucination. Multimodal I/O extends to local image generation and image/PDF/DOCX understanding. Zero cloud dependency for the core loop — cloud is opt-in fallback only.</p>
         <div class="proj-stack">
@@ -421,7 +430,10 @@
       <div class="project-card">
         <div class="proj-top">
           <span class="proj-name">Fungal Keratitis Diagnosis</span>
-          <span class="proj-badge flagship">PGI-MER</span>
+          <span style="display:flex; gap:6px;">
+            <span class="proj-badge flagship">PGI-MER</span>
+            <span class="proj-badge in-progress">In Progress</span>
+          </span>
         </div>
         <p class="proj-desc">Computer vision system for screening fungal keratitis from In Vivo Confocal Microscopy images and patient risk factors, built with a 3-person team in partnership with PGI-MER. Led system architecture and the LLM-based layer that turns model outputs into clinician-readable summaries. Stacked ensemble classifier reaching ~99–100% accuracy on held-out data.</p>
         <div class="proj-stack">
@@ -482,8 +494,8 @@
     <section id="research">
       <div class="section-label">Research</div>
       <div class="pub-card">
-        <div class="pub-title">Current Trends in MXenes and their Hybrids for Next-Generation Supercapacitor Applications</div>
-        <div class="pub-venue">Co-authored review · Elsevier · 2026</div>
+        <div class="pub-title">Interface-Driven Electrochemical Performance of Hybrid MXenes for High-Performance Supercapacitors: Insights and Challenges</div>
+        <div class="pub-venue">Co-authored review · Current Opinion in Solid State & Materials Science · 2026</div>
         <span class="pub-status">Under review</span>
       </div>
     </section>
