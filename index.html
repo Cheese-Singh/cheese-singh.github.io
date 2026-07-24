@@ -241,34 +241,6 @@
       border: 0.5px solid var(--info-border);
     }
 
-    .progress-badge {
-      position: relative;
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      font-weight: 400;
-      padding: 3px 10px;
-      border-radius: 100px;
-      letter-spacing: 0.04em;
-      color: var(--text-tertiary);
-      border: 0.5px solid var(--border-hover);
-      background: var(--tag-bg);
-      overflow: hidden;
-    }
-
-    .progress-badge-fill {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      background: var(--info-bg);
-      z-index: 0;
-    }
-
-    .progress-badge span {
-      position: relative;
-      z-index: 1;
-    }
-
     .proj-desc {
       font-size: 13px;
       color: var(--text-secondary);
@@ -438,7 +410,7 @@
           <span class="proj-name">Gwen</span>
           <span style="display:flex; gap:6px;">
             <span class="proj-badge flagship">Flagship</span>
-            <span class="progress-badge" style="width: 92px;"><span class="progress-badge-fill" style="width: 90%;"></span><span>90% complete</span></span>
+            <span class="proj-badge" style="border: 0.5px dashed var(--border-hover); background: transparent;">In Progress</span>
           </span>
         </div>
         <p class="proj-desc">Fully local, privacy-first voice AI assistant for Apple Silicon (MacBook, iPhone, Apple Watch). Voice input → MLX-Whisper transcription → tiered LLM inference with tool-calling → MLX-audio TTS output, with speaker verification (ECAPA-TDNN) and full-duplex, barge-in-capable conversation via WebRTC echo cancellation. A 4-tier model router balances on-device and cloud inference for latency, cost, and quality, and a novel query-routing layer grounds responses to reduce hallucination. Multimodal I/O extends to local image generation and image/PDF/DOCX understanding. Zero cloud dependency for the core loop — cloud is opt-in fallback only.</p>
