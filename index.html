@@ -3,14 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Ekamveer Singh</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -19,38 +26,52 @@
     :root {
       --bg: #f9f8f6;
       --surface: #ffffff;
-      --border: rgba(0,0,0,0.08);
-      --border-hover: rgba(0,0,0,0.16);
+
+      --border: rgba(0, 0, 0, 0.08);
+      --border-hover: rgba(0, 0, 0, 0.16);
+
       --text-primary: #1a1a18;
       --text-secondary: #6b6b66;
       --text-tertiary: #a0a09a;
+
       --accent: #1a1a18;
+
       --tag-bg: #f0efe9;
       --tag-text: #6b6b66;
+
       --status-bg: #f0f7f0;
       --status-text: #3a7a3a;
-      --info-bg: #f0f4ff;
-      --info-border: #c5d0f5;
-      --info-text: #3a4fa0;
+
+      --gwen-bg: #f7f8fc;
+      --gwen-border: #b9c4e8;
+      --gwen-border-strong: #8d9bd0;
+      --gwen-text: #39477d;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #111110;
         --surface: #1a1a18;
-        --border: rgba(255,255,255,0.08);
-        --border-hover: rgba(255,255,255,0.16);
+
+        --border: rgba(255, 255, 255, 0.08);
+        --border-hover: rgba(255, 255, 255, 0.16);
+
         --text-primary: #f0ede8;
         --text-secondary: #9a9a94;
         --text-tertiary: #5a5a56;
+
         --accent: #f0ede8;
+
         --tag-bg: #222220;
         --tag-text: #9a9a94;
+
         --status-bg: #1a2a1a;
         --status-text: #7ab87a;
-        --info-bg: #141828;
-        --info-border: #2a3460;
-        --info-text: #8a9fd4;
+
+        --gwen-bg: #161924;
+        --gwen-border: #3b4775;
+        --gwen-border-strong: #6877b5;
+        --gwen-text: #9ba9e0;
       }
     }
 
@@ -60,7 +81,7 @@
     }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: "DM Sans", sans-serif;
       background: var(--bg);
       color: var(--text-primary);
       line-height: 1.7;
@@ -73,17 +94,25 @@
       padding: 0 1.5rem;
     }
 
-    /* NAV */
+    /* =========================
+       NAV
+    ========================= */
+
     nav {
       padding: 1.75rem 0 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       border-bottom: 0.5px solid var(--border);
-      margin-bottom: 4rem;
+
+      margin-bottom: 3.2rem;
+
       position: sticky;
       top: 0;
+
       background: var(--bg);
+
       z-index: 10;
     }
 
@@ -104,38 +133,51 @@
       font-size: 13px;
       color: var(--text-secondary);
       text-decoration: none;
-      transition: color 0.15s;
+
+      transition: color 0.15s ease;
     }
 
     .nav-links a:hover {
       color: var(--text-primary);
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
-      margin-bottom: 5rem;
+      margin-bottom: 3rem;
+
       opacity: 0;
       transform: translateY(16px);
+
       animation: fadeUp 0.5s ease forwards;
     }
 
     .hero-eyebrow {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       font-size: 11px;
       font-weight: 300;
+
       color: var(--text-tertiary);
+
       letter-spacing: 0.08em;
       text-transform: uppercase;
+
       margin-bottom: 1.25rem;
     }
 
     .hero h1 {
       font-size: 32px;
       font-weight: 300;
+
       line-height: 1.25;
       letter-spacing: -0.02em;
+
       color: var(--text-primary);
+
       margin-bottom: 1.25rem;
+
       max-width: 520px;
     }
 
@@ -147,43 +189,65 @@
     .hero-bio {
       font-size: 15px;
       color: var(--text-secondary);
+
       line-height: 1.75;
+
       max-width: 500px;
-      margin-bottom: 2rem;
+
+      margin-bottom: 1.75rem;
     }
 
     .contact-row {
       display: flex;
       gap: 0.75rem;
+
       flex-wrap: wrap;
     }
 
     .chip {
       display: inline-flex;
       align-items: center;
+
       gap: 6px;
+
       font-size: 12px;
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       font-weight: 300;
+
       padding: 6px 14px;
+
       border-radius: 100px;
+
       border: 0.5px solid var(--border);
+
       color: var(--text-secondary);
+
       background: var(--surface);
+
       text-decoration: none;
-      transition: border-color 0.15s, color 0.15s;
+
+      transition:
+        border-color 0.15s ease,
+        color 0.15s ease,
+        transform 0.15s ease;
     }
 
     .chip:hover {
       border-color: var(--border-hover);
       color: var(--text-primary);
+      transform: translateY(-1px);
     }
 
-    /* SECTIONS */
+    /* =========================
+       SECTIONS
+    ========================= */
+
     section {
       margin-bottom: 4rem;
+
       opacity: 0;
       transform: translateY(12px);
+
       animation: fadeUp 0.5s ease forwards;
     }
 
@@ -204,235 +268,460 @@
     }
 
     .section-label {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
+
       font-size: 10px;
       font-weight: 400;
+
       color: var(--text-tertiary);
+
       letter-spacing: 0.1em;
       text-transform: uppercase;
+
       margin-bottom: 1.5rem;
+
       padding-bottom: 0.75rem;
+
       border-bottom: 0.5px solid var(--border);
     }
 
-    /* PROJECT CARDS */
+    /* =========================
+       PROJECT CARDS
+    ========================= */
+
     .project-card {
       padding: 1.25rem;
+
       border: 0.5px solid var(--border);
+
       border-radius: 12px;
+
       background: var(--surface);
+
       margin-bottom: 0.75rem;
-      transition: border-color 0.15s;
-      cursor: default;
+
+      transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .project-card:hover {
       border-color: var(--border-hover);
+
+      transform: translateY(-1px);
+
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.035);
     }
 
-    .project-card.featured {
-      border-left: 2px solid var(--info-border);
+    /* =========================
+       GWEN — FLAGSHIP
+    ========================= */
+
+    .project-card.gwen {
+      position: relative;
+
+      padding: 1.5rem;
+
+      background: var(--gwen-bg);
+
+      border: 1px solid var(--gwen-border);
+
+      border-left: 3px solid var(--gwen-border-strong);
+
+      border-radius: 14px;
+
+      margin-bottom: 1rem;
+
+      box-shadow:
+        0 8px 28px rgba(50, 65, 120, 0.07);
+
+      overflow: hidden;
+    }
+
+    .project-card.gwen::after {
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      right: -90px;
+      top: -90px;
+
+      border-radius: 50%;
+
+      background: var(--gwen-border);
+
+      opacity: 0.08;
+
+      pointer-events: none;
+    }
+
+    .project-card.gwen:hover {
+      border-color: var(--gwen-border-strong);
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 12px 34px rgba(50, 65, 120, 0.1);
+    }
+
+    .gwen .proj-name {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .gwen .proj-desc {
+      max-width: 625px;
+    }
+
+    .gwen-release {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 7px;
+
+      font-family: "DM Mono", monospace;
+
+      font-size: 10px;
+      font-weight: 500;
+
+      letter-spacing: 0.06em;
+
+      text-transform: uppercase;
+
+      padding: 4px 10px;
+
+      border-radius: 100px;
+
+      color: var(--status-text);
+
+      background: var(--status-bg);
+
+      border: 0.5px solid rgba(58, 122, 58, 0.2);
+    }
+
+    .gwen-release-dot {
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+
+      background: var(--status-text);
     }
 
     .proj-top {
       display: flex;
+
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 0.5rem;
+
+      margin-bottom: 0.65rem;
+
       gap: 1rem;
     }
 
     .proj-name {
       font-size: 14px;
       font-weight: 500;
+
       color: var(--text-primary);
+
       letter-spacing: -0.01em;
     }
 
     .proj-name-link {
       text-decoration: none;
-      transition: color 0.15s;
+
+      transition: color 0.15s ease;
     }
 
     .proj-name-link:hover {
-      color: var(--info-text);
+      color: var(--gwen-text);
     }
 
     .proj-badges {
       display: flex;
+
       gap: 6px;
+
       align-items: center;
+
       flex-wrap: wrap;
+
       justify-content: flex-end;
     }
 
     .proj-badge {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
+
       font-size: 10px;
       font-weight: 400;
+
       padding: 3px 10px;
+
       border-radius: 100px;
+
       background: var(--tag-bg);
+
       color: var(--tag-text);
+
       letter-spacing: 0.04em;
+
       white-space: nowrap;
     }
 
     .proj-badge.flagship {
-      background: var(--info-bg);
-      color: var(--info-text);
-      border: 0.5px solid var(--info-border);
+      background: transparent;
+
+      color: var(--gwen-text);
+
+      border: 0.5px solid var(--gwen-border);
     }
 
-    .proj-badge.released {
-      background: var(--status-bg);
-      color: var(--status-text);
-      border: 0.5px solid rgba(58,122,58,0.2);
+    .proj-badge.in-progress {
+      border: 0.5px dashed var(--border-hover);
+
+      background: transparent;
     }
 
     .proj-desc {
       font-size: 13px;
+
       color: var(--text-secondary);
+
       line-height: 1.65;
+
       margin-bottom: 1rem;
+    }
+
+    .proj-desc strong {
+      color: var(--text-primary);
+
+      font-weight: 500;
     }
 
     .proj-stack {
       display: flex;
+
       gap: 6px;
+
       flex-wrap: wrap;
+
       margin-bottom: 1rem;
     }
 
     .tag {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
+
       font-size: 10px;
       font-weight: 300;
+
       padding: 3px 9px;
+
       border-radius: 100px;
+
       background: var(--tag-bg);
+
       color: var(--tag-text);
+
       letter-spacing: 0.02em;
+    }
+
+    .gwen .tag {
+      background: rgba(100, 115, 170, 0.08);
     }
 
     .proj-footer {
       display: flex;
+
       justify-content: flex-end;
     }
 
     .proj-link {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
+
       font-size: 10px;
+
       color: var(--text-tertiary);
+
       text-decoration: none;
-      transition: color 0.15s;
+
+      transition: color 0.15s ease;
     }
 
     .proj-link:hover {
       color: var(--text-primary);
     }
 
-    /* PUBLICATION */
+    .gwen .proj-link {
+      color: var(--gwen-text);
+    }
+
+    /* =========================
+       PUBLICATION
+    ========================= */
+
     .pub-card {
       padding: 1.25rem;
+
       border-radius: 12px;
+
       background: var(--surface);
+
       border: 0.5px solid var(--border);
-      border-left: 2px solid var(--info-border);
+
+      border-left: 2px solid var(--gwen-border);
     }
 
     .pub-title {
       font-size: 14px;
+
       font-weight: 500;
+
       color: var(--text-primary);
+
       line-height: 1.5;
+
       margin-bottom: 0.4rem;
+
       letter-spacing: -0.01em;
     }
 
     .pub-venue {
       font-size: 12px;
+
       color: var(--text-secondary);
+
       margin-bottom: 0.6rem;
     }
 
     .pub-status {
       display: inline-block;
-      font-family: 'DM Mono', monospace;
+
+      font-family: "DM Mono", monospace;
+
       font-size: 10px;
+
       font-weight: 400;
+
       padding: 3px 10px;
+
       border-radius: 100px;
+
       background: var(--status-bg);
+
       color: var(--status-text);
+
       letter-spacing: 0.04em;
     }
 
-    /* ABOUT GRID */
+    /* =========================
+       ABOUT
+    ========================= */
+
     .about-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(150px, 1fr));
+
       gap: 10px;
     }
 
     .about-cell {
       padding: 1rem;
+
       background: var(--surface);
+
       border: 0.5px solid var(--border);
+
       border-radius: 10px;
     }
 
     .about-cell-label {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
+
       font-size: 10px;
+
       font-weight: 300;
+
       color: var(--text-tertiary);
+
       letter-spacing: 0.06em;
+
       text-transform: uppercase;
+
       margin-bottom: 5px;
     }
 
     .about-cell-val {
       font-size: 13px;
+
       font-weight: 500;
+
       color: var(--text-primary);
+
       line-height: 1.4;
+
       letter-spacing: -0.01em;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
+
     footer {
       padding: 2rem 0 3rem;
+
       border-top: 0.5px solid var(--border);
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       flex-wrap: wrap;
+
       gap: 1rem;
     }
 
     .footer-copy {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
+
       font-size: 11px;
+
       font-weight: 300;
+
       color: var(--text-tertiary);
     }
 
     .footer-links {
       display: flex;
+
       gap: 1.25rem;
     }
 
     .footer-links a {
       font-size: 12px;
+
       color: var(--text-tertiary);
+
       text-decoration: none;
-      transition: color 0.15s;
+
+      transition: color 0.15s ease;
     }
 
     .footer-links a:hover {
       color: var(--text-primary);
     }
+
+    /* =========================
+       ANIMATION
+    ========================= */
 
     @keyframes fadeUp {
       to {
@@ -440,6 +729,10 @@
         transform: translateY(0);
       }
     }
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 480px) {
       .hero h1 {
@@ -461,39 +754,72 @@
       .proj-badges {
         justify-content: flex-start;
       }
+
+      .project-card.gwen {
+        padding: 1.25rem;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <div class="container">
 
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
     <nav>
-      <span class="nav-name">Ekamveer Singh</span>
+      <span class="nav-name">
+        Ekamveer Singh
+      </span>
 
       <ul class="nav-links">
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="mailto:ekamveer.singh06@gmail.com">Contact</a></li>
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+          <a href="#research">Research</a>
+        </li>
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="mailto:ekamveer.singh06@gmail.com">
+            Contact
+          </a>
+        </li>
       </ul>
     </nav>
 
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
     <div class="hero">
-      <div class="hero-eyebrow">B.Tech CSE · AI — PEC Chandigarh</div>
+
+      <div class="hero-eyebrow">
+        B.Tech CSE · AI — PEC Chandigarh
+      </div>
 
       <h1>
-        Building AI that runs<br>
+        Building AI that runs<br />
         <em>where your data lives.</em>
       </h1>
 
       <p class="hero-bio">
         I work on efficient on-device ML inference, privacy-preserving AI systems,
         and low-hallucination pipelines for high-stakes domains — built from scratch
-        on Apple Silicon, no cloud dependency.
+        on Apple Silicon, with no cloud dependency.
       </p>
 
       <div class="contact-row">
+
         <a
           class="chip"
           href="https://github.com/Cheese-Singh"
@@ -526,15 +852,28 @@
         >
           CV ↗
         </a>
+
       </div>
     </div>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-label">Projects</div>
 
-      <!-- GWEN -->
-      <div class="project-card featured">
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="projects">
+
+      <div class="section-label">
+        Projects
+      </div>
+
+
+      <!-- =========================
+           GWEN
+      ========================= -->
+
+      <div class="project-card gwen">
+
         <div class="proj-top">
 
           <a
@@ -547,28 +886,48 @@
           </a>
 
           <div class="proj-badges">
-            <span class="proj-badge flagship">Flagship · v1.0</span>
-            <span class="proj-badge released">Released</span>
+
+            <span class="proj-badge flagship">
+              Flagship · v1.0
+            </span>
+
+            <span class="gwen-release">
+              <span class="gwen-release-dot"></span>
+              Released
+            </span>
+
           </div>
 
         </div>
 
+
         <p class="proj-desc">
+
           Gwen is a fully local, privacy-first voice AI assistant for Apple Silicon
           (MacBook, iPhone, Apple Watch). Voice input → MLX-Whisper transcription →
           tiered LLM inference with tool-calling → MLX-audio TTS output, with speaker
           verification (ECAPA-TDNN) and full-duplex, barge-in-capable conversation via
-          WebRTC echo cancellation. A 4-tier model router balances on-device and cloud
-          inference for latency, cost, and quality, and a novel query-routing layer
-          grounds responses to reduce hallucination. Multimodal I/O extends to local
-          image generation and image/PDF/DOCX understanding. Zero cloud dependency for
-          the core loop — cloud is opt-in fallback only.
-          <br><br>
-          <strong>Gwen v1 is now released, with active development continuing toward
-          subsequent versions.</strong>
+          WebRTC echo cancellation.
+
+          A 4-tier model router balances on-device and cloud inference for latency,
+          cost, and quality, while a query-routing layer grounds responses to reduce
+          hallucination. Multimodal I/O extends to local image generation and
+          image/PDF/DOCX understanding.
+
+          Zero cloud dependency for the core loop — cloud is opt-in fallback only.
+
+          <br /><br />
+
+          <strong>
+            Gwen v1 is now released. Active development continues toward subsequent
+            versions.
+          </strong>
+
         </p>
 
+
         <div class="proj-stack">
+
           <span class="tag">MLX Swift</span>
           <span class="tag">MLX-Whisper</span>
           <span class="tag">MLX-audio</span>
@@ -576,63 +935,109 @@
           <span class="tag">Tool-calling</span>
           <span class="tag">SwiftUI</span>
           <span class="tag">Apple Silicon</span>
+
         </div>
 
+
         <div class="proj-footer">
+
           <a
             class="proj-link"
             href="https://github.com/Cheese-Singh/Gwen-v1"
             target="_blank"
             rel="noopener"
           >
-            View on GitHub ↗
+            View Gwen v1 on GitHub ↗
           </a>
+
         </div>
+
       </div>
 
-      <!-- FUNGAL KERATITIS -->
-      <div class="project-card featured">
-        <div class="proj-top">
-          <span class="proj-name">Fungal Keratitis Diagnosis</span>
 
-          <span class="proj-badge"
-            style="border: 0.5px dashed var(--border-hover); background: transparent;">
-            In Progress
+      <!-- =========================
+           FUNGAL KERATITIS
+      ========================= -->
+
+      <div class="project-card">
+
+        <div class="proj-top">
+
+          <span class="proj-name">
+            Fungal Keratitis Diagnosis
           </span>
+
+          <span
+            class="proj-badge in-progress"
+          >
+            Research Project
+          </span>
+
         </div>
 
+
         <p class="proj-desc">
+
           Computer vision system for screening fungal keratitis from In Vivo Confocal
-          Microscopy images and patient risk factors, built with a 3-person team in
-          partnership with PGI-MER. Led system architecture and the LLM-based layer
-          that turns model outputs into clinician-readable summaries. Stacked ensemble
-          classifier reaching ~99–100% accuracy on held-out data.
+          Microscopy images and patient risk factors, developed from our end in
+          collaboration with PGI-MER.
+
+          The system combines image-based analysis with patient-level risk factors
+          and an LLM-based interpretation layer to turn model outputs into
+          clinician-readable summaries.
+
+          The complete prototype has been developed and evaluated by our team;
+          clinical deployment and implementation at PGI-MER have not yet taken place.
+
         </p>
 
+
         <div class="proj-stack">
+
           <span class="tag">Python</span>
           <span class="tag">FastAPI</span>
           <span class="tag">OpenCV</span>
           <span class="tag">Scikit-learn</span>
           <span class="tag">React</span>
+          <span class="tag">Computer Vision</span>
+          <span class="tag">LLM</span>
+
         </div>
+
       </div>
 
-      <!-- MLX SERIES -->
+
+      <!-- =========================
+           MLX SERIES
+      ========================= -->
+
       <div class="project-card">
+
         <div class="proj-top">
-          <span class="proj-name">MLX Inference Series</span>
-          <span class="proj-badge">Systems</span>
+
+          <span class="proj-name">
+            MLX Inference Series
+          </span>
+
+          <span class="proj-badge">
+            Systems
+          </span>
+
         </div>
 
+
         <p class="proj-desc">
+
           Seven-stage progressive exploration of on-device LLM inference — from tensor
-          ops and manual tokenisation through stateful multi-turn chat, live voice
-          assistant, agentic tool-calling, MLX-audio TTS, and a full MLX-Whisper pipeline
-          with response sanitisation and chat history.
+          operations and manual tokenisation through stateful multi-turn chat, live
+          voice assistant, agentic tool-calling, MLX-audio TTS, and a full
+          MLX-Whisper pipeline with response sanitisation and chat history.
+
         </p>
 
+
         <div class="proj-stack">
+
           <span class="tag">MLX</span>
           <span class="tag">MLX-Whisper</span>
           <span class="tag">MLX-audio</span>
@@ -640,61 +1045,113 @@
           <span class="tag">sounddevice</span>
           <span class="tag">Qwen3.5</span>
           <span class="tag">Python</span>
+
         </div>
+
       </div>
 
-      <!-- OLLAMA -->
+
+      <!-- =========================
+           OLLAMA
+      ========================= -->
+
       <div class="project-card">
+
         <div class="proj-top">
-          <span class="proj-name">Ollama Agentic Series</span>
-          <span class="proj-badge">Systems</span>
+
+          <span class="proj-name">
+            Ollama Agentic Series
+          </span>
+
+          <span class="proj-badge">
+            Systems
+          </span>
+
         </div>
 
+
         <p class="proj-desc">
+
           Local LLM inference series progressing from single-turn generation through
           multimodal VLM input, multi-turn chat with think-block stripping, and a full
           agentic function-calling loop with CSV-backed inventory.
+
         </p>
 
+
         <div class="proj-stack">
+
           <span class="tag">Ollama</span>
           <span class="tag">Function calling</span>
           <span class="tag">VLM</span>
           <span class="tag">Python</span>
+
         </div>
+
       </div>
 
-      <!-- RESEARCH ML -->
+
+      <!-- =========================
+           RESEARCH ML
+      ========================= -->
+
       <div class="project-card">
+
         <div class="proj-top">
-          <span class="proj-name">Research ML Pipeline</span>
-          <span class="proj-badge">Research</span>
+
+          <span class="proj-name">
+            Research ML Pipeline
+          </span>
+
+          <span class="proj-badge">
+            Research
+          </span>
+
         </div>
 
+
         <p class="proj-desc">
+
           CatBoost regression pipeline predicting supercapacitor capacitance from
           material, synthesis, and electrolyte features. LOOCV evaluation with
           diagnostic plots, residual analysis, and feature importance. Companion to
           co-authored Elsevier review.
+
         </p>
 
+
         <div class="proj-stack">
+
           <span class="tag">CatBoost</span>
           <span class="tag">LOOCV</span>
           <span class="tag">Sklearn</span>
           <span class="tag">OpenAlex API</span>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- RESEARCH -->
+
+    <!-- =========================
+         RESEARCH
+    ========================= -->
+
     <section id="research">
-      <div class="section-label">Research</div>
+
+      <div class="section-label">
+        Research
+      </div>
+
 
       <div class="pub-card">
+
         <div class="pub-title">
+
           Current Trends in MXenes and their Hybrids for Next-Generation
           Supercapacitor Applications
+
         </div>
 
         <div class="pub-venue">
@@ -704,66 +1161,133 @@
         <span class="pub-status">
           Under review
         </span>
+
       </div>
+
     </section>
 
-    <!-- ABOUT -->
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
     <section id="about">
-      <div class="section-label">About</div>
+
+      <div class="section-label">
+        About
+      </div>
+
 
       <div class="about-grid">
 
         <div class="about-cell">
-          <div class="about-cell-label">Degree</div>
-          <div class="about-cell-val">B.Tech CSE-AI</div>
+
+          <div class="about-cell-label">
+            Degree
+          </div>
+
+          <div class="about-cell-val">
+            B.Tech CSE-AI
+          </div>
+
         </div>
 
-        <div class="about-cell">
-          <div class="about-cell-label">CGPA</div>
-          <div class="about-cell-val">9.01</div>
-        </div>
 
         <div class="about-cell">
-          <div class="about-cell-label">Minor</div>
-          <div class="about-cell-val">Quantum Technology · 10.00</div>
+
+          <div class="about-cell-label">
+            CGPA
+          </div>
+
+          <div class="about-cell-val">
+            9.01
+          </div>
+
         </div>
 
+
         <div class="about-cell">
-          <div class="about-cell-label">Institution</div>
+
+          <div class="about-cell-label">
+            Minor
+          </div>
+
+          <div class="about-cell-val">
+            Quantum Technology · 10.00
+          </div>
+
+        </div>
+
+
+        <div class="about-cell">
+
+          <div class="about-cell-label">
+            Institution
+          </div>
+
           <div class="about-cell-val">
             Punjab Engineering College, Chandigarh
           </div>
+
         </div>
 
-        <div class="about-cell">
-          <div class="about-cell-label">Expected Graduation</div>
-          <div class="about-cell-val">May 2028</div>
-        </div>
 
         <div class="about-cell">
-          <div class="about-cell-label">Languages</div>
+
+          <div class="about-cell-label">
+            Expected Graduation
+          </div>
+
+          <div class="about-cell-val">
+            May 2028
+          </div>
+
+        </div>
+
+
+        <div class="about-cell">
+
+          <div class="about-cell-label">
+            Languages
+          </div>
+
           <div class="about-cell-val">
             Punjabi · English · Hindi · Norwegian
           </div>
+
         </div>
 
+
         <div class="about-cell">
-          <div class="about-cell-label">Focus</div>
+
+          <div class="about-cell-label">
+            Focus
+          </div>
+
           <div class="about-cell-val">
             On-device ML · Privacy-preserving AI
           </div>
+
         </div>
 
       </div>
+
     </section>
 
-    <!-- FOOTER -->
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
     <footer>
+
       <span class="footer-copy">
         © 2026 Ekamveer Singh
       </span>
 
+
       <div class="footer-links">
+
         <a
           href="https://github.com/Cheese-Singh"
           target="_blank"
@@ -783,9 +1307,12 @@
         <a href="mailto:ekamveer.singh06@gmail.com">
           Email
         </a>
+
       </div>
+
     </footer>
 
   </div>
+
 </body>
 </html>
