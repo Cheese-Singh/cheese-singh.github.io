@@ -4,11 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ekamveer Singh</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --bg: #f9f8f6;
@@ -48,7 +54,10 @@
       }
     }
 
-    html { font-size: 16px; scroll-behavior: smooth; }
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'DM Sans', sans-serif;
@@ -98,7 +107,9 @@
       transition: color 0.15s;
     }
 
-    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
 
     /* HERO */
     .hero {
@@ -176,10 +187,21 @@
       animation: fadeUp 0.5s ease forwards;
     }
 
-    section:nth-of-type(1) { animation-delay: 0.1s; }
-    section:nth-of-type(2) { animation-delay: 0.2s; }
-    section:nth-of-type(3) { animation-delay: 0.3s; }
-    section:nth-of-type(4) { animation-delay: 0.4s; }
+    section:nth-of-type(1) {
+      animation-delay: 0.1s;
+    }
+
+    section:nth-of-type(2) {
+      animation-delay: 0.2s;
+    }
+
+    section:nth-of-type(3) {
+      animation-delay: 0.3s;
+    }
+
+    section:nth-of-type(4) {
+      animation-delay: 0.4s;
+    }
 
     .section-label {
       font-family: 'DM Mono', monospace;
@@ -204,7 +226,9 @@
       cursor: default;
     }
 
-    .project-card:hover { border-color: var(--border-hover); }
+    .project-card:hover {
+      border-color: var(--border-hover);
+    }
 
     .project-card.featured {
       border-left: 2px solid var(--info-border);
@@ -215,6 +239,7 @@
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 0.5rem;
+      gap: 1rem;
     }
 
     .proj-name {
@@ -222,6 +247,23 @@
       font-weight: 500;
       color: var(--text-primary);
       letter-spacing: -0.01em;
+    }
+
+    .proj-name-link {
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .proj-name-link:hover {
+      color: var(--info-text);
+    }
+
+    .proj-badges {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .proj-badge {
@@ -233,12 +275,19 @@
       background: var(--tag-bg);
       color: var(--tag-text);
       letter-spacing: 0.04em;
+      white-space: nowrap;
     }
 
     .proj-badge.flagship {
       background: var(--info-bg);
       color: var(--info-text);
       border: 0.5px solid var(--info-border);
+    }
+
+    .proj-badge.released {
+      background: var(--status-bg);
+      color: var(--status-text);
+      border: 0.5px solid rgba(58,122,58,0.2);
     }
 
     .proj-desc {
@@ -252,6 +301,7 @@
       display: flex;
       gap: 6px;
       flex-wrap: wrap;
+      margin-bottom: 1rem;
     }
 
     .tag {
@@ -263,6 +313,23 @@
       background: var(--tag-bg);
       color: var(--tag-text);
       letter-spacing: 0.02em;
+    }
+
+    .proj-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .proj-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .proj-link:hover {
+      color: var(--text-primary);
     }
 
     /* PUBLICATION */
@@ -363,23 +430,47 @@
       transition: color 0.15s;
     }
 
-    .footer-links a:hover { color: var(--text-primary); }
+    .footer-links a:hover {
+      color: var(--text-primary);
+    }
 
     @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media (max-width: 480px) {
-      .hero h1 { font-size: 26px; }
-      nav { margin-bottom: 2.5rem; }
-      .nav-links { gap: 1rem; }
+      .hero h1 {
+        font-size: 26px;
+      }
+
+      nav {
+        margin-bottom: 2.5rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .proj-top {
+        flex-direction: column;
+      }
+
+      .proj-badges {
+        justify-content: flex-start;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
+
     <nav>
       <span class="nav-name">Ekamveer Singh</span>
+
       <ul class="nav-links">
         <li><a href="#projects">Projects</a></li>
         <li><a href="#research">Research</a></li>
@@ -390,30 +481,93 @@
 
     <div class="hero">
       <div class="hero-eyebrow">B.Tech CSE · AI — PEC Chandigarh</div>
-      <h1>Building AI that runs<br><em>where your data lives.</em></h1>
+
+      <h1>
+        Building AI that runs<br>
+        <em>where your data lives.</em>
+      </h1>
+
       <p class="hero-bio">
-        I work on efficient on-device ML inference, privacy-preserving AI systems, and low-hallucination pipelines for high-stakes domains — built from scratch on Apple Silicon, no cloud dependency.
+        I work on efficient on-device ML inference, privacy-preserving AI systems,
+        and low-hallucination pipelines for high-stakes domains — built from scratch
+        on Apple Silicon, no cloud dependency.
       </p>
+
       <div class="contact-row">
-        <a class="chip" href="https://github.com/Cheese-Singh" target="_blank" rel="noopener">github/Cheese-Singh</a>
-        <a class="chip" href="mailto:ekamveer.singh06@gmail.com">ekamveer.singh06@gmail.com</a>
-        <a class="chip" href="https://www.linkedin.com/in/ekamveer-singh-278747326/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="chip" href="Ekamveer_Singh_CV.pdf" target="_blank">CV ↗</a>
+        <a
+          class="chip"
+          href="https://github.com/Cheese-Singh"
+          target="_blank"
+          rel="noopener"
+        >
+          github/Cheese-Singh
+        </a>
+
+        <a
+          class="chip"
+          href="mailto:ekamveer.singh06@gmail.com"
+        >
+          ekamveer.singh06@gmail.com
+        </a>
+
+        <a
+          class="chip"
+          href="https://www.linkedin.com/in/ekamveer-singh-278747326/"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
+
+        <a
+          class="chip"
+          href="Ekamveer_Singh_CV.pdf"
+          target="_blank"
+        >
+          CV ↗
+        </a>
       </div>
     </div>
 
+    <!-- PROJECTS -->
     <section id="projects">
       <div class="section-label">Projects</div>
 
+      <!-- GWEN -->
       <div class="project-card featured">
         <div class="proj-top">
-          <span class="proj-name">Gwen</span>
-          <span style="display:flex; gap:6px;">
-            <span class="proj-badge flagship">Flagship</span>
-            <span class="proj-badge" style="border: 0.5px dashed var(--border-hover); background: transparent;">In Progress</span>
-          </span>
+
+          <a
+            class="proj-name proj-name-link"
+            href="https://github.com/Cheese-Singh/Gwen-v1"
+            target="_blank"
+            rel="noopener"
+          >
+            Gwen
+          </a>
+
+          <div class="proj-badges">
+            <span class="proj-badge flagship">Flagship · v1.0</span>
+            <span class="proj-badge released">Released</span>
+          </div>
+
         </div>
-        <p class="proj-desc">Fully local, privacy-first voice AI assistant for Apple Silicon (MacBook, iPhone, Apple Watch). Voice input → MLX-Whisper transcription → tiered LLM inference with tool-calling → MLX-audio TTS output, with speaker verification (ECAPA-TDNN) and full-duplex, barge-in-capable conversation via WebRTC echo cancellation. A 4-tier model router balances on-device and cloud inference for latency, cost, and quality, and a novel query-routing layer grounds responses to reduce hallucination. Multimodal I/O extends to local image generation and image/PDF/DOCX understanding. Zero cloud dependency for the core loop — cloud is opt-in fallback only.</p>
+
+        <p class="proj-desc">
+          Gwen is a fully local, privacy-first voice AI assistant for Apple Silicon
+          (MacBook, iPhone, Apple Watch). Voice input → MLX-Whisper transcription →
+          tiered LLM inference with tool-calling → MLX-audio TTS output, with speaker
+          verification (ECAPA-TDNN) and full-duplex, barge-in-capable conversation via
+          WebRTC echo cancellation. A 4-tier model router balances on-device and cloud
+          inference for latency, cost, and quality, and a novel query-routing layer
+          grounds responses to reduce hallucination. Multimodal I/O extends to local
+          image generation and image/PDF/DOCX understanding. Zero cloud dependency for
+          the core loop — cloud is opt-in fallback only.
+          <br><br>
+          <strong>Gwen v1 is now released, with active development continuing toward
+          subsequent versions.</strong>
+        </p>
+
         <div class="proj-stack">
           <span class="tag">MLX Swift</span>
           <span class="tag">MLX-Whisper</span>
@@ -423,17 +577,38 @@
           <span class="tag">SwiftUI</span>
           <span class="tag">Apple Silicon</span>
         </div>
+
+        <div class="proj-footer">
+          <a
+            class="proj-link"
+            href="https://github.com/Cheese-Singh/Gwen-v1"
+            target="_blank"
+            rel="noopener"
+          >
+            View on GitHub ↗
+          </a>
+        </div>
       </div>
 
+      <!-- FUNGAL KERATITIS -->
       <div class="project-card featured">
         <div class="proj-top">
           <span class="proj-name">Fungal Keratitis Diagnosis</span>
-          <span style="display:flex; gap:6px;">
-            <span class="proj-badge flagship">PGI-MER</span>
-            <span class="proj-badge" style="border: 0.5px dashed var(--border-hover); background: transparent;">In Progress</span>
+
+          <span class="proj-badge"
+            style="border: 0.5px dashed var(--border-hover); background: transparent;">
+            In Progress
           </span>
         </div>
-        <p class="proj-desc">Computer vision system for screening fungal keratitis from In Vivo Confocal Microscopy images and patient risk factors, built with a 3-person team in partnership with PGI-MER. Led system architecture and the LLM-based layer that turns model outputs into clinician-readable summaries. Stacked ensemble classifier reaching ~99–100% accuracy on held-out data.</p>
+
+        <p class="proj-desc">
+          Computer vision system for screening fungal keratitis from In Vivo Confocal
+          Microscopy images and patient risk factors, built with a 3-person team in
+          partnership with PGI-MER. Led system architecture and the LLM-based layer
+          that turns model outputs into clinician-readable summaries. Stacked ensemble
+          classifier reaching ~99–100% accuracy on held-out data.
+        </p>
+
         <div class="proj-stack">
           <span class="tag">Python</span>
           <span class="tag">FastAPI</span>
@@ -443,12 +618,20 @@
         </div>
       </div>
 
+      <!-- MLX SERIES -->
       <div class="project-card">
         <div class="proj-top">
           <span class="proj-name">MLX Inference Series</span>
           <span class="proj-badge">Systems</span>
         </div>
-        <p class="proj-desc">Seven-stage progressive exploration of on-device LLM inference — from tensor ops and manual tokenisation through stateful multi-turn chat, live voice assistant, agentic tool-calling, MLX-audio TTS, and a full MLX-Whisper pipeline with response sanitisation and chat history.</p>
+
+        <p class="proj-desc">
+          Seven-stage progressive exploration of on-device LLM inference — from tensor
+          ops and manual tokenisation through stateful multi-turn chat, live voice
+          assistant, agentic tool-calling, MLX-audio TTS, and a full MLX-Whisper pipeline
+          with response sanitisation and chat history.
+        </p>
+
         <div class="proj-stack">
           <span class="tag">MLX</span>
           <span class="tag">MLX-Whisper</span>
@@ -460,12 +643,19 @@
         </div>
       </div>
 
+      <!-- OLLAMA -->
       <div class="project-card">
         <div class="proj-top">
           <span class="proj-name">Ollama Agentic Series</span>
           <span class="proj-badge">Systems</span>
         </div>
-        <p class="proj-desc">Local LLM inference series progressing from single-turn generation through multimodal VLM input, multi-turn chat with think-block stripping, and a full agentic function-calling loop with CSV-backed inventory.</p>
+
+        <p class="proj-desc">
+          Local LLM inference series progressing from single-turn generation through
+          multimodal VLM input, multi-turn chat with think-block stripping, and a full
+          agentic function-calling loop with CSV-backed inventory.
+        </p>
+
         <div class="proj-stack">
           <span class="tag">Ollama</span>
           <span class="tag">Function calling</span>
@@ -474,12 +664,20 @@
         </div>
       </div>
 
+      <!-- RESEARCH ML -->
       <div class="project-card">
         <div class="proj-top">
           <span class="proj-name">Research ML Pipeline</span>
           <span class="proj-badge">Research</span>
         </div>
-        <p class="proj-desc">CatBoost regression pipeline predicting supercapacitor capacitance from material, synthesis, and electrolyte features. LOOCV evaluation with diagnostic plots, residual analysis, and feature importance. Companion to co-authored Elsevier review.</p>
+
+        <p class="proj-desc">
+          CatBoost regression pipeline predicting supercapacitor capacitance from
+          material, synthesis, and electrolyte features. LOOCV evaluation with
+          diagnostic plots, residual analysis, and feature importance. Companion to
+          co-authored Elsevier review.
+        </p>
+
         <div class="proj-stack">
           <span class="tag">CatBoost</span>
           <span class="tag">LOOCV</span>
@@ -489,57 +687,105 @@
       </div>
     </section>
 
+    <!-- RESEARCH -->
     <section id="research">
       <div class="section-label">Research</div>
+
       <div class="pub-card">
-        <div class="pub-title">Current Trends in MXenes and their Hybrids for Next-Generation Supercapacitor Applications</div>
-        <div class="pub-venue">Co-authored review · Elsevier · 2026</div>
-        <span class="pub-status">Under review</span>
+        <div class="pub-title">
+          Current Trends in MXenes and their Hybrids for Next-Generation
+          Supercapacitor Applications
+        </div>
+
+        <div class="pub-venue">
+          Co-authored review · Elsevier · 2026
+        </div>
+
+        <span class="pub-status">
+          Under review
+        </span>
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about">
       <div class="section-label">About</div>
+
       <div class="about-grid">
+
         <div class="about-cell">
           <div class="about-cell-label">Degree</div>
           <div class="about-cell-val">B.Tech CSE-AI</div>
         </div>
+
         <div class="about-cell">
           <div class="about-cell-label">CGPA</div>
           <div class="about-cell-val">9.01</div>
         </div>
+
         <div class="about-cell">
           <div class="about-cell-label">Minor</div>
           <div class="about-cell-val">Quantum Technology · 10.00</div>
         </div>
+
         <div class="about-cell">
           <div class="about-cell-label">Institution</div>
-          <div class="about-cell-val">Punjab Engineering College, Chandigarh</div>
+          <div class="about-cell-val">
+            Punjab Engineering College, Chandigarh
+          </div>
         </div>
+
         <div class="about-cell">
           <div class="about-cell-label">Expected Graduation</div>
           <div class="about-cell-val">May 2028</div>
         </div>
+
         <div class="about-cell">
           <div class="about-cell-label">Languages</div>
-          <div class="about-cell-val">Punjabi · English · Hindi · Norwegian</div>
+          <div class="about-cell-val">
+            Punjabi · English · Hindi · Norwegian
+          </div>
         </div>
+
         <div class="about-cell">
           <div class="about-cell-label">Focus</div>
-          <div class="about-cell-val">On-device ML · Privacy-preserving AI</div>
+          <div class="about-cell-val">
+            On-device ML · Privacy-preserving AI
+          </div>
         </div>
+
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
-      <span class="footer-copy">© 2026 Ekamveer Singh</span>
+      <span class="footer-copy">
+        © 2026 Ekamveer Singh
+      </span>
+
       <div class="footer-links">
-        <a href="https://github.com/Cheese-Singh" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/ekamveer-singh-278747326/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:ekamveer.singh06@gmail.com">Email</a>
+        <a
+          href="https://github.com/Cheese-Singh"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/ekamveer-singh-278747326/"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
+
+        <a href="mailto:ekamveer.singh06@gmail.com">
+          Email
+        </a>
       </div>
     </footer>
+
   </div>
 </body>
 </html>
