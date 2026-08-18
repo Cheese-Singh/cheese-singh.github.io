@@ -34,8 +34,6 @@
       --text-secondary: #6b6b66;
       --text-tertiary: #a0a09a;
 
-      --accent: #1a1a18;
-
       --tag-bg: #f0efe9;
       --tag-text: #6b6b66;
 
@@ -59,8 +57,6 @@
         --text-primary: #f0ede8;
         --text-secondary: #9a9a94;
         --text-tertiary: #5a5a56;
-
-        --accent: #f0ede8;
 
         --tag-bg: #222220;
         --tag-text: #9a9a94;
@@ -95,11 +91,12 @@
     }
 
     /* =========================
-       NAV
+       NAVIGATION
     ========================= */
 
     nav {
       padding: 1.75rem 0 1.5rem;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -131,7 +128,9 @@
 
     .nav-links a {
       font-size: 13px;
+
       color: var(--text-secondary);
+
       text-decoration: none;
 
       transition: color 0.15s ease;
@@ -146,7 +145,7 @@
     ========================= */
 
     .hero {
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
 
       opacity: 0;
       transform: translateY(16px);
@@ -156,6 +155,7 @@
 
     .hero-eyebrow {
       font-family: "DM Mono", monospace;
+
       font-size: 11px;
       font-weight: 300;
 
@@ -172,6 +172,7 @@
       font-weight: 300;
 
       line-height: 1.25;
+
       letter-spacing: -0.02em;
 
       color: var(--text-primary);
@@ -188,6 +189,7 @@
 
     .hero-bio {
       font-size: 15px;
+
       color: var(--text-secondary);
 
       line-height: 1.75;
@@ -199,6 +201,7 @@
 
     .contact-row {
       display: flex;
+
       gap: 0.75rem;
 
       flex-wrap: wrap;
@@ -206,12 +209,15 @@
 
     .chip {
       display: inline-flex;
+
       align-items: center;
 
       gap: 6px;
 
       font-size: 12px;
+
       font-family: "DM Mono", monospace;
+
       font-weight: 300;
 
       padding: 6px 14px;
@@ -234,7 +240,9 @@
 
     .chip:hover {
       border-color: var(--border-hover);
+
       color: var(--text-primary);
+
       transform: translateY(-1px);
     }
 
@@ -271,11 +279,13 @@
       font-family: "DM Mono", monospace;
 
       font-size: 10px;
+
       font-weight: 400;
 
       color: var(--text-tertiary);
 
       letter-spacing: 0.1em;
+
       text-transform: uppercase;
 
       margin-bottom: 1.5rem;
@@ -311,7 +321,8 @@
 
       transform: translateY(-1px);
 
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.035);
+      box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.035);
     }
 
     /* =========================
@@ -370,6 +381,7 @@
 
     .gwen .proj-name {
       font-size: 16px;
+
       font-weight: 600;
     }
 
@@ -379,6 +391,7 @@
 
     .gwen-release {
       display: inline-flex;
+
       align-items: center;
 
       gap: 7px;
@@ -386,6 +399,7 @@
       font-family: "DM Mono", monospace;
 
       font-size: 10px;
+
       font-weight: 500;
 
       letter-spacing: 0.06em;
@@ -416,6 +430,7 @@
       display: flex;
 
       justify-content: space-between;
+
       align-items: flex-start;
 
       margin-bottom: 0.65rem;
@@ -425,6 +440,7 @@
 
     .proj-name {
       font-size: 14px;
+
       font-weight: 500;
 
       color: var(--text-primary);
@@ -458,6 +474,7 @@
       font-family: "DM Mono", monospace;
 
       font-size: 10px;
+
       font-weight: 400;
 
       padding: 3px 10px;
@@ -517,6 +534,7 @@
       font-family: "DM Mono", monospace;
 
       font-size: 10px;
+
       font-weight: 300;
 
       padding: 3px 9px;
@@ -735,6 +753,7 @@
     ========================= */
 
     @media (max-width: 480px) {
+
       .hero h1 {
         font-size: 26px;
       }
@@ -758,6 +777,7 @@
       .project-card.gwen {
         padding: 1.25rem;
       }
+
     }
   </style>
 </head>
@@ -771,21 +791,29 @@
     ========================= -->
 
     <nav>
+
       <span class="nav-name">
         Ekamveer Singh
       </span>
 
       <ul class="nav-links">
+
         <li>
-          <a href="#projects">Projects</a>
+          <a href="#projects">
+            Projects
+          </a>
         </li>
 
         <li>
-          <a href="#research">Research</a>
+          <a href="#research">
+            Research
+          </a>
         </li>
 
         <li>
-          <a href="#about">About</a>
+          <a href="#about">
+            About
+          </a>
         </li>
 
         <li>
@@ -793,7 +821,9 @@
             Contact
           </a>
         </li>
+
       </ul>
+
     </nav>
 
 
@@ -813,9 +843,11 @@
       </h1>
 
       <p class="hero-bio">
+
         I work on efficient on-device ML inference, privacy-preserving AI systems,
-        and low-hallucination pipelines for high-stakes domains — built from scratch
-        on Apple Silicon, with no cloud dependency.
+        and practical machine learning pipelines — from low-level model exploration
+        on Apple Silicon to applied computer vision and research workflows.
+
       </p>
 
       <div class="contact-row">
@@ -854,6 +886,7 @@
         </a>
 
       </div>
+
     </div>
 
 
@@ -892,8 +925,11 @@
             </span>
 
             <span class="gwen-release">
+
               <span class="gwen-release-dot"></span>
+
               Released
+
             </span>
 
           </div>
@@ -903,24 +939,25 @@
 
         <p class="proj-desc">
 
-          Gwen is a fully local, privacy-first voice AI assistant for Apple Silicon
-          (MacBook, iPhone, Apple Watch). Voice input → MLX-Whisper transcription →
-          tiered LLM inference with tool-calling → MLX-audio TTS output, with speaker
-          verification (ECAPA-TDNN) and full-duplex, barge-in-capable conversation via
-          WebRTC echo cancellation.
+          Gwen is a fully local, privacy-first voice AI assistant for Apple Silicon.
 
-          A 4-tier model router balances on-device and cloud inference for latency,
-          cost, and quality, while a query-routing layer grounds responses to reduce
-          hallucination. Multimodal I/O extends to local image generation and
-          image/PDF/DOCX understanding.
+          The system combines voice input, MLX-Whisper transcription, tiered LLM
+          inference, tool-calling, speaker verification, TTS, multimodal I/O,
+          and macOS system control into a single assistant architecture.
 
-          Zero cloud dependency for the core loop — cloud is opt-in fallback only.
+          The project evolved from the MLX exploration series into a consolidated
+          system with a four-tier model architecture, ranging from lightweight
+          on-device models to larger cloud models for deeper responses.
+
+          Gwen also incorporates persistent user state, latency logging,
+          semantic memory and retrieval, session summaries, web-search caching,
+          speaker verification, voice/text mode switching, interruption handling,
+          and support for image, PDF, and Word document generation and reading.
 
           <br /><br />
 
           <strong>
-            Gwen v1 is now released. Active development continues toward subsequent
-            versions.
+            Gwen v1 is now released, with subsequent development continuing.
           </strong>
 
         </p>
@@ -928,11 +965,13 @@
 
         <div class="proj-stack">
 
-          <span class="tag">MLX Swift</span>
+          <span class="tag">MLX</span>
           <span class="tag">MLX-Whisper</span>
           <span class="tag">MLX-audio</span>
           <span class="tag">SpeechBrain</span>
-          <span class="tag">Tool-calling</span>
+          <span class="tag">Ollama</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">ChromaDB</span>
           <span class="tag">SwiftUI</span>
           <span class="tag">Apple Silicon</span>
 
@@ -964,30 +1003,47 @@
         <div class="proj-top">
 
           <span class="proj-name">
-            Fungal Keratitis Diagnosis
+            Automated Fungal Keratitis Screening
           </span>
 
-          <span
-            class="proj-badge in-progress"
-          >
-            Research Project
-          </span>
+          <div class="proj-badges">
+
+            <span class="proj-badge">
+              Research
+            </span>
+
+            <span class="proj-badge in-progress">
+              Prototype
+            </span>
+
+          </div>
 
         </div>
 
 
         <p class="proj-desc">
 
-          Computer vision system for screening fungal keratitis from In Vivo Confocal
-          Microscopy images and patient risk factors, developed from our end in
-          collaboration with PGI-MER.
+          An automated computer vision framework for screening
+          <strong>fungal keratitis (FK)</strong> using
+          <strong>In Vivo Confocal Microscopy (IVCM)</strong> images combined
+          with patient risk-factor history.
 
-          The system combines image-based analysis with patient-level risk factors
-          and an LLM-based interpretation layer to turn model outputs into
-          clinician-readable summaries.
+          Seven image-processing pipelines (M1–M7) were benchmarked, with
+          <strong>Model 7 (M7)</strong> serving as the production preprocessing
+          pipeline.
 
-          The complete prototype has been developed and evaluated by our team;
-          clinical deployment and implementation at PGI-MER have not yet taken place.
+          The production system combines green-channel, CLAHE, contour, and GLCM
+          image features with a <strong>14-field patient risk-factor
+          questionnaire</strong>. Classification uses a
+          <strong>Mixture of Experts with MLP gating</strong> alongside a
+          <strong>Snapshot Ensemble of five Random Forest models</strong>.
+
+          The application is implemented with a FastAPI backend and a
+          React-based intake form and results dashboard.
+
+          Developed as a research prototype; it is intended for research and
+          educational purposes and is not a substitute for professional medical
+          diagnosis or treatment.
 
         </p>
 
@@ -996,11 +1052,12 @@
 
           <span class="tag">Python</span>
           <span class="tag">FastAPI</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">Scikit-learn</span>
           <span class="tag">React</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">Scikit-image</span>
+          <span class="tag">Scikit-learn</span>
+          <span class="tag">Random Forest</span>
           <span class="tag">Computer Vision</span>
-          <span class="tag">LLM</span>
 
         </div>
 
@@ -1010,46 +1067,48 @@
       <!-- =========================
            MLX SERIES
       ========================= -->
-      
+
       <div class="project-card">
-      
+
         <div class="proj-top">
-      
+
           <span class="proj-name">
             MLX Inference Series
           </span>
-      
+
           <span class="proj-badge">
             Systems
           </span>
-      
+
         </div>
-      
+
+
         <p class="proj-desc">
-      
-          A progressive exploration of the MLX framework for running and understanding
-          machine learning models on Apple Silicon.
-      
-          The series moves from tensor operations, vectorization, manual tokenisation,
-          and embedding implementation through local Qwen3.5-9B inference, stateful
-          conversations, multimodal and voice pipelines, structured tool use, and
-          real-time audio I/O.
-      
-          Later stages develop into a fully voice-driven agentic assistant with
+
+          A progressive exploration of the <strong>MLX framework</strong> for
+          running and understanding machine learning models on Apple Silicon.
+
+          The series begins with tensor operations, vectorization, manual
+          tokenisation, and embedding implementation, then progresses through
+          local Qwen3.5-9B inference, stateful conversations, voice pipelines,
+          structured tool use, TTS, and real-time audio I/O.
+
+          Later stages develop into a voice-driven agentic assistant with
           VAD-based recording, MLX-Whisper transcription, Qwen3.5-9B generation,
-          Kokoro-82M sentence-streamed TTS, macOS system control, web search,
-          dynamic tool registration, and function/tool-calling.
-      
-          The series ultimately develops into the foundations of Gwen, including
-          semantic memory and retrieval, SQLite-backed user state and latency logs,
-          session summaries, speaker verification, multimodal file generation and
-          reading, voice/text mode switching, interruption handling, and a four-tier
+          Kokoro-82M sentence-streamed TTS, macOS system control, dynamic tool
+          registration, and web search.
+
+          The later Gwen stages introduce persistent user state and latency logs,
+          semantic memory and retrieval with ChromaDB, session summaries,
+          speaker verification, multimodal file generation and reading,
+          voice/text mode switching, interruption handling, and a four-tier
           model architecture combining local and cloud inference.
-      
+
         </p>
-      
+
+
         <div class="proj-stack">
-      
+
           <span class="tag">MLX</span>
           <span class="tag">MLX-LM</span>
           <span class="tag">MLX-VLM</span>
@@ -1058,63 +1117,67 @@
           <span class="tag">Qwen3.5-9B</span>
           <span class="tag">Kokoro-82M</span>
           <span class="tag">SpeechBrain</span>
-          <span class="tag">Ollama</span>
           <span class="tag">Python</span>
-      
+
         </div>
-      
+
       </div>
-      
-      
+
+
       <!-- =========================
            OLLAMA SERIES
       ========================= -->
-      
+
       <div class="project-card">
-      
+
         <div class="proj-top">
-      
+
           <span class="proj-name">
             Ollama Series
           </span>
-      
+
           <span class="proj-badge">
             Systems
           </span>
-      
+
         </div>
-      
+
+
         <p class="proj-desc">
-      
-          A progressive exploration of local LLM inference and interaction patterns
-          using the Ollama runtime.
-      
-          The series begins with single-turn text generation and progresses through
-          multimodal image input, persistent multi-turn conversations, command
-          handling, think-block stripping, and repetition-loop prevention.
-      
-          It then moves into agentic tool use with function calling, including a
-          multi-step reasoning loop backed by a CSV inventory with check, add, update,
-          and save operations.
-      
-          The final stage introduces a command-line workflow for Modelfile lifecycle
-          management and offline LLM evaluation, including model validation,
-          automated model creation, interactive chat, structured prompt benchmarking,
-          and report generation.
-      
+
+          A progressive exploration of <strong>local LLM inference and
+          interaction patterns using the Ollama runtime</strong>.
+
+          The series progresses from single-turn text generation to
+          multimodal image input, persistent multi-turn conversations,
+          command handling, think-block stripping, and repetition-loop
+          prevention.
+
+          It then moves into agentic tool use with
+          <strong>function calling</strong>, including a multi-step reasoning
+          loop backed by a CSV inventory with check, add, update, and save
+          operations.
+
+          The final stage introduces a command-line workflow for
+          <strong>Modelfile lifecycle management and offline LLM
+          evaluation</strong>, including model validation, automated model
+          creation, interactive chat, structured prompt benchmarking, and
+          report generation.
+
         </p>
-      
+
+
         <div class="proj-stack">
-      
+
           <span class="tag">Ollama</span>
-          <span class="tag">Function calling</span>
+          <span class="tag">Function Calling</span>
           <span class="tag">VLM</span>
           <span class="tag">Modelfiles</span>
           <span class="tag">Pandas</span>
           <span class="tag">Python</span>
-      
+
         </div>
-      
+
       </div>
 
 
@@ -1139,10 +1202,16 @@
 
         <p class="proj-desc">
 
-          CatBoost regression pipeline predicting supercapacitor capacitance from
-          material, synthesis, and electrolyte features. LOOCV evaluation with
-          diagnostic plots, residual analysis, and feature importance. Companion to
-          co-authored Elsevier review.
+          Research-oriented machine learning and analytics workflows for
+          materials science and scientific literature analysis.
+
+          Includes a CatBoost regression pipeline for predicting
+          supercapacitor capacitance using material, synthesis, and electrolyte
+          features, evaluated using <strong>Leave-One-Out Cross-Validation
+          (LOOCV)</strong> with diagnostic plots and feature analysis.
+
+          Also includes an OpenAlex-based research trend analyzer for tracking
+          publication volume for selected scientific topics.
 
         </p>
 
@@ -1151,8 +1220,58 @@
 
           <span class="tag">CatBoost</span>
           <span class="tag">LOOCV</span>
-          <span class="tag">Sklearn</span>
+          <span class="tag">Scikit-learn</span>
+          <span class="tag">Pandas</span>
           <span class="tag">OpenAlex API</span>
+          <span class="tag">Matplotlib</span>
+          <span class="tag">Python</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           MINI
+      ========================= -->
+
+      <div class="project-card">
+
+        <div class="proj-top">
+
+          <span class="proj-name">
+            Mini
+          </span>
+
+          <span class="proj-badge">
+            Applications
+          </span>
+
+        </div>
+
+
+        <p class="proj-desc">
+
+          Small, self-contained utility applications exploring on-device ML
+          pipelines and native macOS/iOS interfaces.
+
+          Includes a SwiftUI voice summarisation application with a FastAPI
+          backend using MLX-Whisper and Qwen3.5-9B, as well as a multilingual
+          translation prototype using Gemma-4B and MLX-Whisper for Spanish,
+          French, and Italian.
+
+        </p>
+
+
+        <div class="proj-stack">
+
+          <span class="tag">Swift</span>
+          <span class="tag">SwiftUI</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">MLX-Whisper</span>
+          <span class="tag">MLX-VLM</span>
+          <span class="tag">MLX-audio</span>
+          <span class="tag">Python</span>
 
         </div>
 
