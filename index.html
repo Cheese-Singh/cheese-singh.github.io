@@ -956,9 +956,9 @@
 
           <br /><br />
 
-          <strong>
+          
             Gwen v1 is now released, with subsequent development continuing.
-          </strong>
+          
 
         </p>
 
@@ -998,7 +998,7 @@
            FUNGAL KERATITIS
       ========================= -->
 
-      <div class="project-card">
+      <div class="project-card" style="border-left: 3px solid var(--gwen-border-strong);">
 
         <div class="proj-top">
 
@@ -1023,27 +1023,17 @@
 
         <p class="proj-desc">
 
-          An automated computer vision framework for screening
-          <strong>fungal keratitis (FK)</strong> using
-          <strong>In Vivo Confocal Microscopy (IVCM)</strong> images combined
-          with patient risk-factor history.
+          Computer vision system for screening fungal keratitis from In Vivo Confocal
+          Microscopy images and patient risk factors, developed by a 3-person team
+          in collaboration with PGI-MER.
 
-          Seven image-processing pipelines (M1–M7) were benchmarked, with
-          <strong>Model 7 (M7)</strong> serving as the production preprocessing
-          pipeline.
+          Seven image-processing pipelines were benchmarked, with Model 7 used for
+          the production pipeline and a stacked ensemble for classification. I led
+          system architecture and built the LLM-based layer that turns model outputs
+          and patient risk factors into clinician-readable summaries.
 
-          The production system combines green-channel, CLAHE, contour, and GLCM
-          image features with a <strong>14-field patient risk-factor
-          questionnaire</strong>. Classification uses a
-          <strong>Mixture of Experts with MLP gating</strong> alongside a
-          <strong>Snapshot Ensemble of five Random Forest models</strong>.
-
-          The application is implemented with a FastAPI backend and a
-          React-based intake form and results dashboard.
-
-          Developed as a research prototype; it is intended for research and
-          educational purposes and is not a substitute for professional medical
-          diagnosis or treatment.
+          The complete prototype was developed and evaluated from our end; clinical
+          deployment and implementation at PGI-MER have not yet taken place.
 
         </p>
 
@@ -1085,24 +1075,14 @@
 
         <p class="proj-desc">
 
-          A progressive exploration of the <strong>MLX framework</strong> for
-          running and understanding machine learning models on Apple Silicon.
+          Progressive exploration of MLX for machine learning and LLM inference on
+          Apple Silicon, moving from tensor operations and manual embeddings to
+          local Qwen3.5-9B inference, stateful chat, voice pipelines, tool use,
+          TTS, and real-time audio I/O.
 
-          The series begins with tensor operations, vectorization, manual
-          tokenisation, and embedding implementation, then progresses through
-          local Qwen3.5-9B inference, stateful conversations, voice pipelines,
-          structured tool use, TTS, and real-time audio I/O.
-
-          Later stages develop into a voice-driven agentic assistant with
-          VAD-based recording, MLX-Whisper transcription, Qwen3.5-9B generation,
-          Kokoro-82M sentence-streamed TTS, macOS system control, dynamic tool
-          registration, and web search.
-
-          The later Gwen stages introduce persistent user state and latency logs,
-          semantic memory and retrieval with ChromaDB, session summaries,
-          speaker verification, multimodal file generation and reading,
-          voice/text mode switching, interruption handling, and a four-tier
-          model architecture combining local and cloud inference.
+          Later stages develop into Gwen's voice-driven agentic architecture with
+          MLX-Whisper, Kokoro-82M, macOS system control, web search, speaker
+          verification, semantic memory, multimodal I/O, and four-tier inference.
 
         </p>
 
@@ -1145,24 +1125,13 @@
 
         <p class="proj-desc">
 
-          A progressive exploration of <strong>local LLM inference and
-          interaction patterns using the Ollama runtime</strong>.
+          Five-script exploration of local LLM inference and interaction using
+          Ollama, from streamed generation and multimodal vision to stateful chat,
+          think-block stripping, and repetition prevention.
 
-          The series progresses from single-turn text generation to
-          multimodal image input, persistent multi-turn conversations,
-          command handling, think-block stripping, and repetition-loop
-          prevention.
-
-          It then moves into agentic tool use with
-          <strong>function calling</strong>, including a multi-step reasoning
-          loop backed by a CSV inventory with check, add, update, and save
-          operations.
-
-          The final stage introduces a command-line workflow for
-          <strong>Modelfile lifecycle management and offline LLM
-          evaluation</strong>, including model validation, automated model
-          creation, interactive chat, structured prompt benchmarking, and
-          report generation.
+          The series progresses to agentic function calling with a CSV-backed
+          inventory, then to a CLI for Modelfile lifecycle management, model
+          validation, offline LLM evaluation, and structured prompt benchmarking.
 
         </p>
 
@@ -1207,8 +1176,8 @@
 
           Includes a CatBoost regression pipeline for predicting
           supercapacitor capacitance using material, synthesis, and electrolyte
-          features, evaluated using <strong>Leave-One-Out Cross-Validation
-          (LOOCV)</strong> with diagnostic plots and feature analysis.
+          features, evaluated using Leave-One-Out Cross-Validation
+          (LOOCV) with diagnostic plots and feature analysis.
 
           Also includes an OpenAlex-based research trend analyzer for tracking
           publication volume for selected scientific topics.
