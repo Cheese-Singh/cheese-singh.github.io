@@ -90,10 +90,6 @@
       padding: 0 1.5rem;
     }
 
-    /* =========================
-       NAVIGATION
-    ========================= */
-
     nav {
       padding: 1.75rem 0 1.5rem;
 
@@ -139,10 +135,6 @@
     .nav-links a:hover {
       color: var(--text-primary);
     }
-
-    /* =========================
-       HERO
-    ========================= */
 
     .hero {
       margin-bottom: 2.5rem;
@@ -246,10 +238,6 @@
       transform: translateY(-1px);
     }
 
-    /* =========================
-       SECTIONS
-    ========================= */
-
     section {
       margin-bottom: 4rem;
 
@@ -295,10 +283,6 @@
       border-bottom: 0.5px solid var(--border);
     }
 
-    /* =========================
-       PROJECT CARDS
-    ========================= */
-
     .project-card {
       padding: 1.25rem;
 
@@ -324,10 +308,6 @@
       box-shadow:
         0 6px 20px rgba(0, 0, 0, 0.035);
     }
-
-    /* =========================
-       GWEN — FLAGSHIP
-    ========================= */
 
     .project-card.gwen {
       position: relative;
@@ -578,10 +558,6 @@
       color: var(--gwen-text);
     }
 
-    /* =========================
-       PUBLICATION
-    ========================= */
-
     .pub-card {
       padding: 1.25rem;
 
@@ -636,10 +612,6 @@
       letter-spacing: 0.04em;
     }
 
-    /* =========================
-       ABOUT
-    ========================= */
-
     .about-grid {
       display: grid;
 
@@ -687,10 +659,6 @@
       letter-spacing: -0.01em;
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
-
     footer {
       padding: 2rem 0 3rem;
 
@@ -737,20 +705,12 @@
       color: var(--text-primary);
     }
 
-    /* =========================
-       ANIMATION
-    ========================= */
-
     @keyframes fadeUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-
-    /* =========================
-       MOBILE
-    ========================= */
 
     @media (max-width: 480px) {
       .hero h1 {
@@ -783,10 +743,6 @@
 <body>
 
   <div class="container">
-
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
 
     <nav>
 
@@ -825,10 +781,6 @@
     </nav>
 
 
-    <!-- =========================
-         HERO
-    ========================= -->
-
     <div class="hero">
 
       <div class="hero-eyebrow">
@@ -850,7 +802,7 @@
 
       <div class="contact-row">
 
-        <a
+        
           class="chip"
           href="https://github.com/Cheese-Singh"
           target="_blank"
@@ -859,14 +811,14 @@
           github/Cheese-Singh
         </a>
 
-        <a
+        
           class="chip"
           href="mailto:ekamveer.singh06@gmail.com"
         >
           ekamveer.singh06@gmail.com
         </a>
 
-        <a
+        
           class="chip"
           href="https://www.linkedin.com/in/ekamveer-singh-278747326/"
           target="_blank"
@@ -875,7 +827,7 @@
           LinkedIn
         </a>
 
-        <a
+        
           class="chip"
           href="Ekamveer_Singh_CV.pdf"
           target="_blank"
@@ -888,10 +840,6 @@
     </div>
 
 
-    <!-- =========================
-         PROJECTS
-    ========================= -->
-
     <section id="projects">
 
       <div class="section-label">
@@ -899,15 +847,11 @@
       </div>
 
 
-      <!-- =========================
-           GWEN
-      ========================= -->
-
       <div class="project-card gwen">
 
         <div class="proj-top">
 
-          <a
+          
             class="proj-name proj-name-link"
             href="https://github.com/Cheese-Singh/Gwen-v1"
             target="_blank"
@@ -976,7 +920,7 @@
 
         <div class="proj-footer">
 
-          <a
+          
             class="proj-link"
             href="https://github.com/Cheese-Singh/Gwen-v1"
             target="_blank"
@@ -990,16 +934,12 @@
       </div>
 
 
-      <!-- =========================
-           LLM CASCADE EVAL
-      ========================= -->
-
       <div class="project-card" style="border-left: 3px solid var(--gwen-border-strong);">
 
         <div class="proj-top">
 
           <span class="proj-name">
-            LLM Cascade Eval
+            LLM Cascade — Minimum Sufficient Inference
           </span>
 
           <div class="proj-badges">
@@ -1009,7 +949,7 @@
             </span>
 
             <span class="proj-badge in-progress">
-              Pilot
+              Phase I complete
             </span>
 
           </div>
@@ -1019,20 +959,25 @@
 
         <p class="proj-desc">
 
-          A weak-to-strong Ollama model cascade for code generation, benchmarked
-          against Gemini 3.6 Flash. Code problems are verifier-gated: each candidate
-          is executed against the problem's test suite, and escalation happens only
-          on a verified failure — not on LLM review. Open-ended problems use a
-          separate AGREE/EDIT/REWRITE review protocol, since no deterministic check
-          exists there.
+          A research harness studying how much LLM inference is actually needed
+          to produce a reliable answer. A four-model ladder (gpt-oss-20b, gemma4,
+          nemotron-3-super, nemotron-3-ultra) is the experimental mechanism: each
+          candidate is executed against a deterministic test suite, and escalation
+          happens only on a verified failure, not on LLM review. The project grew
+          out of an earlier weak-to-strong cascade benchmarked against Gemini, and
+          was reframed once execution-based verification made a sharper question
+          possible.
 
           <br /><br />
 
-          In a 3-problem pilot, the cascade reached 3/3 correctness, matching both
-          governed Gemini retry conditions and beating ungoverned one-shot Gemini
-          (2/3). Switching code evaluation from review-gating to verifier-gating cut
-          cascade token cost by 61.5% on the same problems (23,645 → 9,101 tokens) —
-          though the cascade still costs more than one-shot Gemini.
+          On a 100-problem code benchmark, the first layer alone solved 90%.
+          Execution-gated escalation reached 100% while sending only 8% of problems
+          past the first layer, all resolved by the second; the two strongest
+          models were never needed. Mean token use rose about 17% (692 to 808 per
+          query). The gate uses the same tests that score the result, so this is an
+          oracle-verified setting, and results come from a single run on a
+          corrected benchmark. Next: counterfactual analysis of the minimum
+          sufficient layer per problem, then learned routing.
 
         </p>
 
@@ -1040,17 +985,17 @@
         <div class="proj-stack">
 
           <span class="tag">Ollama</span>
-          <span class="tag">Gemini API</span>
           <span class="tag">Python</span>
+          <span class="tag">Sandboxed Execution</span>
           <span class="tag">Evaluation Harness</span>
-          <span class="tag">Verifier-Gated Cascade</span>
+          <span class="tag">Execution-Gated Cascade</span>
 
         </div>
 
 
         <div class="proj-footer">
 
-          <a
+          
             class="proj-link"
             href="https://github.com/Cheese-Singh/LLM-Cascade"
             target="_blank"
@@ -1063,10 +1008,6 @@
 
       </div>
 
-
-      <!-- =========================
-           FUNGAL KERATITIS
-      ========================= -->
 
       <div class="project-card" style="border-left: 3px solid var(--gwen-border-strong);">
 
@@ -1127,10 +1068,6 @@
       </div>
 
 
-      <!-- =========================
-           MLX SERIES
-      ========================= -->
-
       <div class="project-card">
 
         <div class="proj-top">
@@ -1177,10 +1114,6 @@
       </div>
 
 
-      <!-- =========================
-           OLLAMA SERIES
-      ========================= -->
-
       <div class="project-card">
 
         <div class="proj-top">
@@ -1222,10 +1155,6 @@
 
       </div>
 
-
-      <!-- =========================
-           RESEARCH ML
-      ========================= -->
 
       <div class="project-card">
 
@@ -1273,10 +1202,6 @@
       </div>
 
 
-      <!-- =========================
-           MINI
-      ========================= -->
-
       <div class="project-card">
 
         <div class="proj-top">
@@ -1322,10 +1247,6 @@
     </section>
 
 
-    <!-- =========================
-         RESEARCH
-    ========================= -->
-
     <section id="research">
 
       <div class="section-label">
@@ -1353,10 +1274,6 @@
 
     </section>
 
-
-    <!-- =========================
-         ABOUT
-    ========================= -->
 
     <section id="about">
 
@@ -1462,10 +1379,6 @@
     </section>
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
-
     <footer>
 
       <span class="footer-copy">
@@ -1475,7 +1388,7 @@
 
       <div class="footer-links">
 
-        <a
+        
           href="https://github.com/Cheese-Singh"
           target="_blank"
           rel="noopener"
@@ -1483,7 +1396,7 @@
           GitHub
         </a>
 
-        <a
+        
           href="https://www.linkedin.com/in/ekamveer-singh-278747326/"
           target="_blank"
           rel="noopener"
