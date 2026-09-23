@@ -364,6 +364,11 @@
       border: 0.5px solid var(--gwen-border);
     }
 
+    .proj-badge.complete {
+      background: var(--status-bg);
+      color: var(--status-text);
+    }
+
     .proj-badge.in-progress {
       border: 0.5px dashed var(--border-hover);
       background: transparent;
@@ -721,40 +726,43 @@
               Research
             </span>
 
-            <span class="proj-badge in-progress">
-              Phase I complete
+            <span class="proj-badge complete">
+              Phase II complete
             </span>
           </div>
         </div>
 
         <p class="proj-desc">
-          A research harness studying how much LLM inference is actually needed
-          to produce a reliable answer. A four-model ladder (gpt-oss-20b, gemma4,
-          nemotron-3-super, nemotron-3-ultra) is the experimental mechanism: each
-          candidate is executed against a deterministic test suite, and escalation
-          happens only on a verified failure, not on LLM review. The project grew
-          out of an earlier weak-to-strong cascade benchmarked against Gemini, and
-          was reframed once execution-based verification made a sharper question
-          possible.
+          A research project studying how much LLM inference is actually needed
+          for reliable task completion. The central question is whether inference
+          can be dynamically stopped once a task has received sufficient reasoning
+          or verification.
 
-          <br /><br />
+          The experimental system uses a four-model ladder consisting of
+          gpt-oss-20b, gemma4, nemotron-3-super, and nemotron-3-ultra. Phase I
+          evaluated execution-gated escalation on a 100-problem code benchmark.
+          The first layer solved 90% of problems independently, while
+          execution-gated escalation reached 100% with only 8% of problems
+          requiring escalation; every escalation was resolved at the second layer.
 
-          On a 100-problem code benchmark, the first layer alone solved 90%.
-          Execution-gated escalation reached 100% while sending only 8% of problems
-          past the first layer, all resolved by the second; the two strongest
-          models were never needed. Mean token use rose about 17% (692 to 808 per
-          query). The gate uses the same tests that score the result, so this is an
-          oracle-verified setting, and results come from a single run on a
-          corrected benchmark. Next: counterfactual analysis of the minimum
-          sufficient layer per problem, then learned routing.
+          Phase II characterized the minimum sufficient layer across hard coding,
+          mathematics, and finance tasks. All four layers were evaluated for every
+          problem in a contextual sequential setup, allowing the minimum layer
+          sufficient for each problem to be identified.
+
+          The results establish an empirical basis for moving from oracle-verified
+          escalation toward predictive routing: learning to estimate how much
+          inference a task requires before invoking stronger models.
         </p>
 
         <div class="proj-stack">
+          <span class="tag">LLM Routing</span>
+          <span class="tag">Minimum Sufficient Inference</span>
           <span class="tag">Ollama</span>
           <span class="tag">Python</span>
           <span class="tag">Sandboxed Execution</span>
           <span class="tag">Evaluation Harness</span>
-          <span class="tag">Execution-Gated Cascade</span>
+          <span class="tag">Weak-to-Strong Inference</span>
         </div>
 
         <div class="proj-footer">
@@ -764,7 +772,7 @@
             target="_blank"
             rel="noopener"
           >
-            View on GitHub ↗
+            View Phase I & II on GitHub ↗
           </a>
         </div>
       </div>
