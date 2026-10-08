@@ -3,118 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Ekamveer Singh</title>
+  <meta name="description" content="Ekamveer Singh — B.Tech CSE-AI at PEC Chandigarh. Reliable multi-model LLM systems and efficient, privacy-preserving on-device ML." />
+  <meta name="theme-color" content="#f9f8f6" />
+  <meta property="og:title" content="Ekamveer Singh" />
+  <meta property="og:description" content="Building AI that runs where your data lives." />
+  <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    /* ---------- Reset & tokens ---------- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --bg: #f9f8f6;
       --surface: #ffffff;
-
       --border: rgba(0, 0, 0, 0.08);
       --border-hover: rgba(0, 0, 0, 0.16);
-
       --text-primary: #1a1a18;
       --text-secondary: #6b6b66;
-      --text-tertiary: #a0a09a;
-
+      --text-tertiary: #8a8a84;
       --tag-bg: #f0efe9;
       --tag-text: #6b6b66;
-
       --status-bg: #f0f7f0;
       --status-text: #3a7a3a;
-
-      --gwen-bg: #f7f8fc;
-      --gwen-border: #b9c4e8;
-      --gwen-border-strong: #8d9bd0;
-      --gwen-text: #39477d;
+      --accent-bg: #f7f8fc;
+      --accent-border: #b9c4e8;
+      --accent-strong: #8d9bd0;
+      --accent-text: #39477d;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #111110;
         --surface: #1a1a18;
-
         --border: rgba(255, 255, 255, 0.08);
         --border-hover: rgba(255, 255, 255, 0.16);
-
         --text-primary: #f0ede8;
         --text-secondary: #9a9a94;
-        --text-tertiary: #5a5a56;
-
+        --text-tertiary: #7a7a74;
         --tag-bg: #222220;
         --tag-text: #9a9a94;
-
         --status-bg: #1a2a1a;
         --status-text: #7ab87a;
-
-        --gwen-bg: #161924;
-        --gwen-border: #3b4775;
-        --gwen-border-strong: #6877b5;
-        --gwen-text: #9ba9e0;
+        --accent-bg: #161924;
+        --accent-border: #3b4775;
+        --accent-strong: #6877b5;
+        --accent-text: #9ba9e0;
       }
     }
 
-    html {
-      font-size: 16px;
-      scroll-behavior: smooth;
-    }
+    html { font-size: 16px; scroll-behavior: smooth; scroll-padding-top: 5rem; }
 
     body {
-      font-family: "DM Sans", sans-serif;
+      font-family: "DM Sans", system-ui, sans-serif;
       background: var(--bg);
       color: var(--text-primary);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
+    a:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 3px; border-radius: 4px; }
 
+    .container { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ---------- Navigation ---------- */
     nav {
-      padding: 1.75rem 0 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 0.5px solid var(--border);
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      padding: 1.5rem 0 1.25rem;
       margin-bottom: 3.2rem;
-      position: sticky;
-      top: 0;
       background: var(--bg);
-      z-index: 10;
+      border-bottom: 0.5px solid var(--border);
     }
 
-    .nav-name {
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      color: var(--text-primary);
-    }
+    .nav-name { font-size: 14px; font-weight: 500; letter-spacing: -0.01em; }
 
-    .nav-links {
-      display: flex;
-      gap: 1.75rem;
-      list-style: none;
-    }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; list-style: none; }
 
     .nav-links a {
       font-size: 13px;
@@ -123,16 +97,10 @@
       transition: color 0.15s ease;
     }
 
-    .nav-links a:hover {
-      color: var(--text-primary);
-    }
+    .nav-links a:hover { color: var(--text-primary); }
 
-    .hero {
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      transform: translateY(16px);
-      animation: fadeUp 0.5s ease forwards;
-    }
+    /* ---------- Hero ---------- */
+    .hero { margin-bottom: 3rem; }
 
     .hero-eyebrow {
       font-family: "DM Mono", monospace;
@@ -149,77 +117,41 @@
       font-weight: 300;
       line-height: 1.25;
       letter-spacing: -0.02em;
-      color: var(--text-primary);
-      margin-bottom: 1.25rem;
       max-width: 520px;
+      margin-bottom: 1.25rem;
     }
 
-    .hero h1 em {
-      font-style: italic;
-      font-weight: 300;
-    }
+    .hero h1 em { font-style: italic; font-weight: 300; }
 
     .hero-bio {
       font-size: 15px;
       color: var(--text-secondary);
       line-height: 1.75;
-      max-width: 500px;
+      max-width: 520px;
       margin-bottom: 1.75rem;
     }
 
-    .contact-row {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
+    .contact-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
     .chip {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 12px;
       font-family: "DM Mono", monospace;
+      font-size: 12px;
       font-weight: 300;
       padding: 6px 14px;
       border-radius: 100px;
       border: 0.5px solid var(--border);
-      color: var(--text-secondary);
       background: var(--surface);
+      color: var(--text-secondary);
       text-decoration: none;
-      transition:
-        border-color 0.15s ease,
-        color 0.15s ease,
-        transform 0.15s ease;
+      transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
     }
 
-    .chip:hover {
-      border-color: var(--border-hover);
-      color: var(--text-primary);
-      transform: translateY(-1px);
-    }
+    .chip:hover { border-color: var(--border-hover); color: var(--text-primary); transform: translateY(-1px); }
 
-    section {
-      margin-bottom: 4rem;
-      opacity: 0;
-      transform: translateY(12px);
-      animation: fadeUp 0.5s ease forwards;
-    }
-
-    section:nth-of-type(1) {
-      animation-delay: 0.1s;
-    }
-
-    section:nth-of-type(2) {
-      animation-delay: 0.2s;
-    }
-
-    section:nth-of-type(3) {
-      animation-delay: 0.3s;
-    }
-
-    section:nth-of-type(4) {
-      animation-delay: 0.4s;
-    }
+    /* ---------- Sections ---------- */
+    section { margin-bottom: 4rem; }
 
     .section-label {
       font-family: "DM Mono", monospace;
@@ -228,70 +160,108 @@
       color: var(--text-tertiary);
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin-bottom: 1.5rem;
       padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
       border-bottom: 0.5px solid var(--border);
     }
 
+    /* ---------- Interests ---------- */
+    .interest-list { list-style: none; display: grid; gap: 0.9rem; }
+
+    .interest-list li {
+      padding: 1rem 1.25rem;
+      border: 0.5px solid var(--border);
+      border-left: 2px solid var(--accent-border);
+      border-radius: 12px;
+      background: var(--surface);
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .interest-list strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.15rem;
+    }
+
+    /* ---------- Project cards ---------- */
     .project-card {
       padding: 1.25rem;
+      margin-bottom: 0.75rem;
       border: 0.5px solid var(--border);
       border-radius: 12px;
       background: var(--surface);
-      margin-bottom: 0.75rem;
-      transition:
-        border-color 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .project-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.035);
-    }
+    .project-card:hover { border-color: var(--border-hover); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.035); }
 
-    .project-card.gwen {
+    .project-card.research { border-left: 3px solid var(--accent-strong); }
+
+    .project-card.flagship {
       position: relative;
-      padding: 1.5rem;
-      background: var(--gwen-bg);
-      border: 1px solid var(--gwen-border);
-      border-left: 3px solid var(--gwen-border-strong);
-      border-radius: 14px;
-      margin-bottom: 1rem;
-      box-shadow: 0 8px 28px rgba(50, 65, 120, 0.07);
       overflow: hidden;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      background: var(--accent-bg);
+      border: 1px solid var(--accent-border);
+      border-left: 3px solid var(--accent-strong);
+      border-radius: 14px;
+      box-shadow: 0 8px 28px rgba(50, 65, 120, 0.07);
     }
 
-    .project-card.gwen::after {
+    .project-card.flagship::after {
       content: "";
       position: absolute;
+      top: -90px;
+      right: -90px;
       width: 180px;
       height: 180px;
-      right: -90px;
-      top: -90px;
       border-radius: 50%;
-      background: var(--gwen-border);
+      background: var(--accent-border);
       opacity: 0.08;
       pointer-events: none;
     }
 
-    .project-card.gwen:hover {
-      border-color: var(--gwen-border-strong);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 34px rgba(50, 65, 120, 0.1);
+    .project-card.flagship:hover { border-color: var(--accent-strong); box-shadow: 0 12px 34px rgba(50, 65, 120, 0.1); }
+
+    .proj-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.65rem;
     }
 
-    .gwen .proj-name {
-      font-size: 16px;
-      font-weight: 600;
+    .proj-name { font-size: 14px; font-weight: 500; letter-spacing: -0.01em; color: var(--text-primary); }
+
+    .flagship .proj-name { font-size: 16px; font-weight: 600; }
+
+    .proj-name-link { text-decoration: none; transition: color 0.15s ease; }
+    .proj-name-link:hover { color: var(--accent-text); }
+
+    .proj-badges { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 6px; }
+
+    .proj-badge {
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
     }
 
-    .gwen .proj-desc {
-      max-width: 625px;
-    }
+    .proj-badge.flagship-badge { background: transparent; color: var(--accent-text); border: 0.5px solid var(--accent-border); }
+    .proj-badge.complete { background: var(--status-bg); color: var(--status-text); }
+    .proj-badge.in-progress { background: transparent; border: 0.5px dashed var(--border-hover); }
 
-    .gwen-release {
+    .live-badge {
       display: inline-flex;
       align-items: center;
       gap: 7px;
@@ -307,72 +277,7 @@
       border: 0.5px solid rgba(58, 122, 58, 0.2);
     }
 
-    .gwen-release-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--status-text);
-    }
-
-    .proj-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.65rem;
-      gap: 1rem;
-    }
-
-    .proj-name {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text-primary);
-      letter-spacing: -0.01em;
-    }
-
-    .proj-name-link {
-      text-decoration: none;
-      transition: color 0.15s ease;
-    }
-
-    .proj-name-link:hover {
-      color: var(--gwen-text);
-    }
-
-    .proj-badges {
-      display: flex;
-      gap: 6px;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .proj-badge {
-      font-family: "DM Mono", monospace;
-      font-size: 10px;
-      font-weight: 400;
-      padding: 3px 10px;
-      border-radius: 100px;
-      background: var(--tag-bg);
-      color: var(--tag-text);
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-    }
-
-    .proj-badge.flagship {
-      background: transparent;
-      color: var(--gwen-text);
-      border: 0.5px solid var(--gwen-border);
-    }
-
-    .proj-badge.complete {
-      background: var(--status-bg);
-      color: var(--status-text);
-    }
-
-    .proj-badge.in-progress {
-      border: 0.5px dashed var(--border-hover);
-      background: transparent;
-    }
+    .live-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--status-text); }
 
     .proj-desc {
       font-size: 13px;
@@ -381,17 +286,13 @@
       margin-bottom: 1rem;
     }
 
-    .proj-desc strong {
-      color: var(--text-primary);
-      font-weight: 500;
-    }
+    .flagship .proj-desc { max-width: 625px; }
 
-    .proj-stack {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
-    }
+    .proj-desc strong { font-weight: 500; color: var(--text-primary); }
+    .proj-desc ul { margin: 0.5rem 0 0 1.1rem; }
+    .proj-desc li { margin-bottom: 0.35rem; }
+
+    .proj-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
 
     .tag {
       font-family: "DM Mono", monospace;
@@ -404,14 +305,9 @@
       letter-spacing: 0.02em;
     }
 
-    .gwen .tag {
-      background: rgba(100, 115, 170, 0.08);
-    }
+    .flagship .tag { background: rgba(100, 115, 170, 0.08); }
 
-    .proj-footer {
-      display: flex;
-      justify-content: flex-end;
-    }
+    .proj-footer { display: flex; justify-content: flex-end; }
 
     .proj-link {
       font-family: "DM Mono", monospace;
@@ -421,42 +317,26 @@
       transition: color 0.15s ease;
     }
 
-    .proj-link:hover {
-      color: var(--text-primary);
-    }
+    .proj-link:hover { color: var(--text-primary); }
+    .flagship .proj-link { color: var(--accent-text); }
 
-    .gwen .proj-link {
-      color: var(--gwen-text);
-    }
-
+    /* ---------- Publications ---------- */
     .pub-card {
       padding: 1.25rem;
+      border: 0.5px solid var(--border);
+      border-left: 2px solid var(--accent-border);
       border-radius: 12px;
       background: var(--surface);
-      border: 0.5px solid var(--border);
-      border-left: 2px solid var(--gwen-border);
     }
 
-    .pub-title {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text-primary);
-      line-height: 1.5;
-      margin-bottom: 0.4rem;
-      letter-spacing: -0.01em;
-    }
-
-    .pub-venue {
-      font-size: 12px;
-      color: var(--text-secondary);
-      margin-bottom: 0.6rem;
-    }
+    .pub-title { font-size: 14px; font-weight: 500; line-height: 1.5; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
+    .pub-venue, .pub-role { font-size: 12px; color: var(--text-secondary); margin-bottom: 0.4rem; }
+    .pub-role { margin-bottom: 0.7rem; }
 
     .pub-status {
       display: inline-block;
       font-family: "DM Mono", monospace;
       font-size: 10px;
-      font-weight: 400;
       padding: 3px 10px;
       border-radius: 100px;
       background: var(--status-bg);
@@ -464,18 +344,40 @@
       letter-spacing: 0.04em;
     }
 
+    /* ---------- Skills ---------- */
+    .skills { display: grid; gap: 10px; }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1rem;
+      align-items: baseline;
+      padding: 0.9rem 1rem;
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+    }
+
+    .skill-label {
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      font-weight: 300;
+      color: var(--text-tertiary);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .skill-val { font-size: 13px; line-height: 1.5; }
+
+    /* ---------- About ---------- */
     .about-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 10px;
+      margin-bottom: 10px;
     }
 
-    .about-cell {
-      padding: 1rem;
-      background: var(--surface);
-      border: 0.5px solid var(--border);
-      border-radius: 10px;
-    }
+    .about-cell { padding: 1rem; border: 0.5px solid var(--border); border-radius: 10px; background: var(--surface); }
 
     .about-cell-label {
       font-family: "DM Mono", monospace;
@@ -487,78 +389,54 @@
       margin-bottom: 5px;
     }
 
-    .about-cell-val {
+    .about-cell-val { font-size: 13px; font-weight: 500; line-height: 1.4; letter-spacing: -0.01em; }
+
+    .acc-list { list-style: none; display: grid; gap: 10px; }
+
+    .acc-list li {
+      padding: 0.9rem 1rem;
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
       font-size: 13px;
-      font-weight: 500;
-      color: var(--text-primary);
-      line-height: 1.4;
-      letter-spacing: -0.01em;
+      line-height: 1.5;
     }
 
+    /* ---------- Footer ---------- */
     footer {
-      padding: 2rem 0 3rem;
-      border-top: 0.5px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
+      padding: 2rem 0 3rem;
+      border-top: 0.5px solid var(--border);
     }
 
-    .footer-copy {
-      font-family: "DM Mono", monospace;
-      font-size: 11px;
-      font-weight: 300;
-      color: var(--text-tertiary);
+    .footer-copy { font-family: "DM Mono", monospace; font-size: 11px; font-weight: 300; color: var(--text-tertiary); }
+    .footer-links { display: flex; gap: 1.25rem; }
+    .footer-links a { font-size: 12px; color: var(--text-tertiary); text-decoration: none; transition: color 0.15s ease; }
+    .footer-links a:hover { color: var(--text-primary); }
+
+    /* ---------- Motion: one page-load reveal ---------- */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    .hero { animation: fadeUp 0.5s ease both; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero { animation: none; }
+      * { transition: none !important; }
     }
 
-    .footer-links {
-      display: flex;
-      gap: 1.25rem;
-    }
-
-    .footer-links a {
-      font-size: 12px;
-      color: var(--text-tertiary);
-      text-decoration: none;
-      transition: color 0.15s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--text-primary);
-    }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
+    /* ---------- Mobile ---------- */
     @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 26px;
-      }
-
-      nav {
-        margin-bottom: 2.5rem;
-      }
-
-      .nav-links {
-        gap: 1rem;
-      }
-
-      .proj-top {
-        flex-direction: column;
-      }
-
-      .proj-badges {
-        justify-content: flex-start;
-      }
-
-      .project-card.gwen {
-        padding: 1.25rem;
-      }
+      nav { margin-bottom: 2.5rem; padding-top: 1.1rem; }
+      .nav-links { gap: 0.4rem 1rem; }
+      .hero h1 { font-size: 26px; }
+      .proj-top { flex-direction: column; }
+      .proj-badges { justify-content: flex-start; }
+      .project-card.flagship { padding: 1.25rem; }
+      .skill-row { grid-template-columns: 1fr; gap: 0.2rem; }
     }
   </style>
 </head>
@@ -567,529 +445,262 @@
   <div class="container">
 
     <nav>
-      <span class="nav-name">
-        Ekamveer Singh
-      </span>
-
+      <span class="nav-name">Ekamveer Singh</span>
       <ul class="nav-links">
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-
-        <li>
-          <a href="#research">Research</a>
-        </li>
-
-        <li>
-          <a href="#about">About</a>
-        </li>
-
-        <li>
-          <a href="mailto:ekamveer.singh06@gmail.com">Contact</a>
-        </li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="mailto:ekamveer.singh06@gmail.com">Contact</a></li>
       </ul>
     </nav>
 
-    <div class="hero">
-      <div class="hero-eyebrow">
-        B.Tech CSE · AI — PEC Chandigarh
-      </div>
-
-      <h1>
-        Building AI that runs<br />
-        <em>where your data lives.</em>
-      </h1>
-
+    <header class="hero">
+      <div class="hero-eyebrow">B.Tech CSE · AI — PEC Chandigarh</div>
+      <h1>Building AI that runs<br /><em>where your data lives.</em></h1>
       <p class="hero-bio">
-        I work on efficient on-device ML inference, privacy-preserving AI systems,
-        and practical machine learning pipelines — from low-level model exploration
-        on Apple Silicon to applied computer vision and research workflows.
+        I work on the reliability of multi-model LLM systems and on efficient,
+        privacy-preserving on-device inference — from cascaded verification and
+        escalation strategies to low-level model exploration on Apple Silicon and
+        applied computer vision.
       </p>
-
       <div class="contact-row">
-        <a
-          class="chip"
-          href="https://github.com/Cheese-Singh"
-          target="_blank"
-          rel="noopener"
-        >
-          github/Cheese-Singh
-        </a>
-
-        <a
-          class="chip"
-          href="mailto:ekamveer.singh06@gmail.com"
-        >
-          ekamveer.singh06@gmail.com
-        </a>
-
-        <a
-          class="chip"
-          href="https://www.linkedin.com/in/ekamveer-singh-278747326/"
-          target="_blank"
-          rel="noopener"
-        >
-          LinkedIn
-        </a>
-
-        <a
-          class="chip"
-          href="Ekamveer_Singh_CV.pdf"
-          target="_blank"
-        >
-          CV ↗
-        </a>
+        <a class="chip" href="https://github.com/Cheese-Singh" target="_blank" rel="noopener">github/Cheese-Singh</a>
+        <a class="chip" href="mailto:ekamveer.singh06@gmail.com">ekamveer.singh06@gmail.com</a>
+        <a class="chip" href="https://www.linkedin.com/in/ekamveer-singh-278747326/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="chip" href="Ekamveer_Singh_CV.pdf" target="_blank" rel="noopener">CV ↗</a>
       </div>
-    </div>
+    </header>
 
-    <section id="projects">
-      <div class="section-label">
-        Projects
-      </div>
+    <main>
 
-      <div class="project-card gwen">
-        <div class="proj-top">
-          <a
-            class="proj-name proj-name-link"
-            href="https://github.com/Cheese-Singh/Gwen-v1"
-            target="_blank"
-            rel="noopener"
-          >
-            Gwen
-          </a>
+      <section id="interests">
+        <h2 class="section-label">Research Interests</h2>
+        <ul class="interest-list">
+          <li>
+            <strong>Reliable multi-model and multi-agent LLM systems</strong>
+            Robustness, and verification and escalation strategies that reduce hallucination and error in cascaded pipelines.
+          </li>
+          <li>
+            <strong>Efficient, on-device, privacy-preserving inference</strong>
+            Running capable models locally, with routing that decides when stronger (or cloud) models are actually needed.
+          </li>
+        </ul>
+      </section>
 
-          <div class="proj-badges">
-            <span class="proj-badge flagship">
-              Flagship · v1.1
-            </span>
+      <section id="projects">
+        <h2 class="section-label">Projects</h2>
 
-            <span class="gwen-release">
-              <span class="gwen-release-dot"></span>
-              v1.1 · Live
-            </span>
+        <!-- Gwen -->
+        <article class="project-card flagship">
+          <div class="proj-top">
+            <a class="proj-name proj-name-link" href="https://github.com/Cheese-Singh/Gwen-v1" target="_blank" rel="noopener">Gwen — Local Personal AI Assistant</a>
+            <div class="proj-badges">
+              <span class="proj-badge flagship-badge">Flagship · Apr 2026 – Present</span>
+              <span class="live-badge"><span class="live-dot"></span>v1.1 · Live</span>
+            </div>
           </div>
-        </div>
-
-        <p class="proj-desc">
-          Gwen is a local-first, agentic voice AI assistant for Apple Silicon.
-
-          The system combines a native SwiftUI interface with a Python/FastAPI backend,
-          MLX-powered on-device inference, voice interaction, tiered model routing,
-          tool-calling, persistent memory, multimodal I/O, and macOS system control.
-
-          The project evolved from the MLX exploration series into a consolidated
-          personal-assistant architecture spanning lightweight on-device models and
-          higher-capability cloud models.
-
-          Gwen incorporates persistent user state, session history, semantic memory
-          and retrieval, real-time voice interaction, sentence-level TTS, acoustic
-          echo cancellation, voice/text mode switching, interruption handling, and
-          support for image, PDF, and Word document generation and reading.
-
-          <br /><br />
-
-          Gwen v1.1 is now live.
-        </p>
-
-        <div class="proj-stack">
-          <span class="tag">MLX</span>
-          <span class="tag">MLX-Whisper</span>
-          <span class="tag">MLX-audio</span>
-          <span class="tag">SpeechBrain</span>
-          <span class="tag">Ollama</span>
-          <span class="tag">SQLite</span>
-          <span class="tag">ChromaDB</span>
-          <span class="tag">SwiftUI</span>
-          <span class="tag">Apple Silicon</span>
-        </div>
-
-        <div class="proj-footer">
-          <a
-            class="proj-link"
-            href="https://github.com/Cheese-Singh/Gwen-v1"
-            target="_blank"
-            rel="noopener"
-          >
-            View Gwen v1.1 on GitHub ↗
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card" style="border-left: 3px solid var(--gwen-border-strong);">
-        <div class="proj-top">
-          <span class="proj-name">
-            LLM Cascade — Minimum Sufficient Inference
-          </span>
-
-          <div class="proj-badges">
-            <span class="proj-badge">
-              Research
-            </span>
-
-            <span class="proj-badge complete">
-              Phase III complete
-            </span>
+          <p class="proj-desc">
+            A fully local, privacy-first, agentic voice assistant for Apple Silicon, with a native SwiftUI interface
+            and a Python/FastAPI backend. It grew out of the MLX exploration series and was built independently
+            across 15 progressive stages.
+          </p>
+          <div class="proj-desc">
+            <ul>
+              <li><strong>Four-tier model routing</strong> from on-device to cloud with automatic fallback, plus a query-routing layer built to ground responses and reduce hallucination.</li>
+              <li><strong>Full-duplex voice:</strong> speaker verification (ECAPA-TDNN), acoustic echo cancellation (WebRTC AEC3), sentence-level TTS, interruption handling, and voice/text mode switching.</li>
+              <li><strong>Memory and tools:</strong> persistent state, session history, semantic memory and retrieval, tool-calling, macOS system control, and multimodal I/O (image, PDF, Word).</li>
+            </ul>
           </div>
-        </div>
-
-        <p class="proj-desc">
-          A research project studying how much LLM inference is actually needed
-          for reliable task completion. The central question is whether a cascade
-          can dynamically stop once sufficient inference has been performed,
-          rather than always invoking the strongest available model.
-        
-          The experimental system uses a four-model ladder consisting of
-          gpt-oss-20b, gemma4, nemotron-3-super, and nemotron-3-ultra. Phase I
-          evaluated execution-gated escalation on a 100-problem code benchmark,
-          reaching 100% accuracy with only 8% of problems requiring escalation.
-        
-          Phase II characterized the minimum sufficient layer across coding,
-          mathematics, and finance tasks through contextual sequential evaluation,
-          establishing oracle labels for the minimum inference depth required by
-          each problem.
-        
-          Phase III moves from oracle-verified escalation toward learned routing.
-          Using the TAT-QA dataset, a lightweight logistic-regression router was
-          trained on cheap observable response features including confidence,
-          answer similarity, response length, numeric density, reasoning structure,
-          and final-answer presence. The router predicts whether additional
-          inference is warranted without using an external LLM judge at inference.
-        
-          On a 50-question held-out evaluation, the learned router achieved
-          approximately 96% routing accuracy while reducing latency by about 76%
-          relative to always using the strongest model. Only one test question
-          reached the fourth layer. An additional finding was that self-reported
-          model confidence correlated negatively with correctness (−0.73),
-          highlighting the difficulty of using model confidence as a reliability
-          signal.
-        </p>
-
-        <div class="proj-stack">
-          <span class="tag">LLM Routing</span>
-          <span class="tag">Minimum Sufficient Inference</span>
-          <span class="tag">Logistic Regression</span>
-          <span class="tag">TAT-QA</span>
-          <span class="tag">Ollama</span>
-          <span class="tag">Python</span>
-          <span class="tag">Evaluation Harness</span>
-          <span class="tag">Weak-to-Strong Inference</span>
-        </div>
-
-        <div class="proj-footer">
-          <a
-            class="proj-link"
-            href="https://github.com/Cheese-Singh/LLM-Cascade"
-            target="_blank"
-            rel="noopener"
-          >
-            View Phase I-III on GitHub ↗
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card" style="border-left: 3px solid var(--gwen-border-strong);">
-        <div class="proj-top">
-          <span class="proj-name">
-            Automated Fungal Keratitis Screening
-          </span>
-
-          <div class="proj-badges">
-            <span class="proj-badge">
-              Research
-            </span>
-
-            <span class="proj-badge in-progress">
-              Prototype
-            </span>
+          <div class="proj-stack">
+            <span class="tag">MLX</span><span class="tag">MLX-Whisper</span><span class="tag">MLX-audio</span>
+            <span class="tag">SpeechBrain</span><span class="tag">Ollama</span><span class="tag">SQLite</span>
+            <span class="tag">ChromaDB</span><span class="tag">SwiftUI</span><span class="tag">Apple Silicon</span>
           </div>
-        </div>
-
-        <p class="proj-desc">
-          Computer vision system for screening fungal keratitis from In Vivo
-          Confocal Microscopy images and patient risk factors, developed by a
-          3-person team after a clinical need was raised by a PGI-MER physician
-          to faculty. Seven image-processing pipelines were benchmarked, with
-          Model 7 used for the production pipeline and a stacked ensemble for
-          classification. I led system architecture and built the LLM-based
-          clinical summary layer that turns model outputs and patient risk
-          factors into clinician-readable summaries.
-
-          <br /><br />
-
-          The complete prototype was developed and evaluated independently by
-          our team; there is no formal agreement with PGI-MER, and clinical
-          adoption or deployment there has not taken place.
-        </p>
-
-        <div class="proj-stack">
-          <span class="tag">Python</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">React</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">Scikit-image</span>
-          <span class="tag">Scikit-learn</span>
-          <span class="tag">Random Forest</span>
-          <span class="tag">Computer Vision</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="proj-top">
-          <span class="proj-name">
-            MLX Inference Series
-          </span>
-
-          <span class="proj-badge">
-            Systems
-          </span>
-        </div>
-
-        <p class="proj-desc">
-          Progressive exploration of MLX for machine learning and LLM inference on
-          Apple Silicon, moving from tensor operations and manual embeddings to
-          local Qwen3.5-9B inference, stateful chat, voice pipelines, tool use,
-          TTS, and real-time audio I/O.
-
-          Later stages develop into Gwen's voice-driven agentic architecture with
-          MLX-Whisper, Kokoro-82M, macOS system control, web search, speaker
-          verification, semantic memory, multimodal I/O, and four-tier inference.
-        </p>
-
-        <div class="proj-stack">
-          <span class="tag">MLX</span>
-          <span class="tag">MLX-LM</span>
-          <span class="tag">MLX-VLM</span>
-          <span class="tag">MLX-Whisper</span>
-          <span class="tag">MLX-audio</span>
-          <span class="tag">Qwen3.5-9B</span>
-          <span class="tag">Kokoro-82M</span>
-          <span class="tag">SpeechBrain</span>
-          <span class="tag">Python</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="proj-top">
-          <span class="proj-name">
-            Ollama Series
-          </span>
-
-          <span class="proj-badge">
-            Systems
-          </span>
-        </div>
-
-        <p class="proj-desc">
-          Five-script exploration of local LLM inference and interaction using
-          Ollama, from streamed generation and multimodal vision to stateful chat,
-          think-block stripping, and repetition prevention.
-
-          The series progresses to agentic function calling with a CSV-backed
-          inventory, then to a CLI for Modelfile lifecycle management, model
-          validation, offline LLM evaluation, and structured prompt benchmarking.
-        </p>
-
-        <div class="proj-stack">
-          <span class="tag">Ollama</span>
-          <span class="tag">Function Calling</span>
-          <span class="tag">VLM</span>
-          <span class="tag">Modelfiles</span>
-          <span class="tag">Pandas</span>
-          <span class="tag">Python</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="proj-top">
-          <span class="proj-name">
-            Research ML Pipeline
-          </span>
-
-          <span class="proj-badge">
-            Research
-          </span>
-        </div>
-
-        <p class="proj-desc">
-          Research-oriented machine learning and analytics workflows for
-          materials science and scientific literature analysis.
-
-          Includes a CatBoost regression pipeline for predicting
-          supercapacitor capacitance using material, synthesis, and electrolyte
-          features, evaluated using Leave-One-Out Cross-Validation
-          (LOOCV) with diagnostic plots and feature analysis.
-
-          Also includes an OpenAlex-based research trend analyzer for tracking
-          publication volume for selected scientific topics.
-        </p>
-
-        <div class="proj-stack">
-          <span class="tag">CatBoost</span>
-          <span class="tag">LOOCV</span>
-          <span class="tag">Scikit-learn</span>
-          <span class="tag">Pandas</span>
-          <span class="tag">OpenAlex API</span>
-          <span class="tag">Matplotlib</span>
-          <span class="tag">Python</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="proj-top">
-          <span class="proj-name">
-            Mini
-          </span>
-
-          <span class="proj-badge">
-            Applications
-          </span>
-        </div>
-
-        <p class="proj-desc">
-          Small, self-contained utility applications exploring on-device ML
-          pipelines and native macOS/iOS interfaces.
-
-          Includes a SwiftUI voice summarisation application with a FastAPI
-          backend using MLX-Whisper and Qwen3.5-9B, as well as a multilingual
-          translation prototype using Gemma-4B and MLX-Whisper for Spanish,
-          French, and Italian.
-        </p>
-
-        <div class="proj-stack">
-          <span class="tag">Swift</span>
-          <span class="tag">SwiftUI</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">MLX-Whisper</span>
-          <span class="tag">MLX-VLM</span>
-          <span class="tag">MLX-audio</span>
-          <span class="tag">Python</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="research">
-      <div class="section-label">
-        Research
-      </div>
-
-      <div class="pub-card">
-        <div class="pub-title">
-          Interface-Driven Electrochemical Performance of Hybrid MXenes for High-Performance Supercapacitors: Insights and Challenges
-        </div>
-
-        <div class="pub-venue">
-          Co-authored review · Current Opinion in Solid State & Materials Science · 2026
-        </div>
-
-        <span class="pub-status">
-          Under review
-        </span>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="section-label">
-        About
-      </div>
-
-      <div class="about-grid">
-        <div class="about-cell">
-          <div class="about-cell-label">
-            Degree
+          <div class="proj-footer">
+            <a class="proj-link" href="https://github.com/Cheese-Singh/Gwen-v1" target="_blank" rel="noopener">View Gwen v1.1 on GitHub ↗</a>
           </div>
+        </article>
 
-          <div class="about-cell-val">
-            B.Tech CSE-AI
+        <!-- LLM Cascade -->
+        <article class="project-card research">
+          <div class="proj-top">
+            <span class="proj-name">LLM Cascade — Minimum Sufficient Inference</span>
+            <div class="proj-badges">
+              <span class="proj-badge">Research · 2026</span>
+              <span class="proj-badge complete">Phase III complete</span>
+            </div>
           </div>
+          <p class="proj-desc">
+            How much LLM inference is actually needed for reliable task completion? This project tests whether a
+            cascade can stop once enough inference has been done, instead of always calling the strongest model.
+            The ladder is gpt-oss-20b → gemma4 → nemotron-3-super → nemotron-3-ultra, and stronger layers receive
+            the failed candidate and objective execution feedback.
+          </p>
+          <div class="proj-desc">
+            <ul>
+              <li><strong>Phase I:</strong> sandboxed harness over 100 code problems with deterministic tests. L1 alone reached 90%; execution-gated escalation reached 100% while escalating only 8% of problems (all resolved at L2), with mean tokens rising from 693 to 808 per query.</li>
+              <li><strong>Phase II:</strong> contextual sequential evaluation across coding, mathematics, and finance, establishing oracle labels for the minimum sufficient layer per problem.</li>
+              <li><strong>Phase III:</strong> a logistic-regression router trained on cheap response features (confidence, answer similarity, length, numeric density, reasoning structure, final-answer presence) on TAT-QA, with no LLM judge at inference. On 50 held-out questions it reached about 96% routing accuracy and cut latency by about 76% versus always using the strongest model.</li>
+              <li><strong>Finding:</strong> self-reported confidence correlated negatively with correctness (−0.73), so it is a poor reliability signal.</li>
+            </ul>
+          </div>
+          <div class="proj-stack">
+            <span class="tag">LLM Routing</span><span class="tag">Minimum Sufficient Inference</span>
+            <span class="tag">Logistic Regression</span><span class="tag">TAT-QA</span><span class="tag">Ollama</span>
+            <span class="tag">Python</span><span class="tag">Evaluation Harness</span><span class="tag">Weak-to-Strong Inference</span>
+          </div>
+          <div class="proj-footer">
+            <a class="proj-link" href="https://github.com/Cheese-Singh/LLM-Cascade" target="_blank" rel="noopener">View Phase I–III on GitHub ↗</a>
+          </div>
+        </article>
+
+        <!-- Fungal Keratitis -->
+        <article class="project-card research">
+          <div class="proj-top">
+            <span class="proj-name">Automated Fungal Keratitis Screening</span>
+            <div class="proj-badges">
+              <span class="proj-badge">Research · Jul 2026</span>
+              <span class="proj-badge in-progress">Prototype</span>
+            </div>
+          </div>
+          <p class="proj-desc">
+            A computer vision system for screening fungal keratitis from In Vivo Confocal Microscopy images and
+            patient risk factors, built by a 3-person team after a PGI-MER physician raised a clinical need to
+            faculty. Seven image-processing pipelines were benchmarked; Model 7 powers the production pipeline,
+            with a stacked ensemble for classification. I led system architecture and built the LLM-based layer
+            that turns model outputs and risk factors into clinician-readable summaries.
+            <br /><br />
+            The prototype was developed and evaluated independently by our team. There is no formal agreement with
+            PGI-MER, and clinical adoption or deployment there has not taken place.
+          </p>
+          <div class="proj-stack">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span>
+            <span class="tag">OpenCV</span><span class="tag">Scikit-image</span><span class="tag">Scikit-learn</span>
+            <span class="tag">Random Forest</span><span class="tag">Computer Vision</span>
+          </div>
+        </article>
+
+        <!-- MLX Series -->
+        <article class="project-card">
+          <div class="proj-top">
+            <span class="proj-name">MLX Inference Series</span>
+            <span class="proj-badge">Systems</span>
+          </div>
+          <p class="proj-desc">
+            Progressive exploration of MLX for ML and LLM inference on Apple Silicon, from tensor operations and
+            manual embeddings to local Qwen3.5-9B inference, stateful chat, voice pipelines, tool use, TTS, and
+            real-time audio I/O. Later stages become Gwen's voice-driven agentic architecture: MLX-Whisper,
+            Kokoro-82M, macOS system control, web search, speaker verification, semantic memory, multimodal I/O,
+            and four-tier inference.
+          </p>
+          <div class="proj-stack">
+            <span class="tag">MLX</span><span class="tag">MLX-LM</span><span class="tag">MLX-VLM</span>
+            <span class="tag">MLX-Whisper</span><span class="tag">MLX-audio</span><span class="tag">Qwen3.5-9B</span>
+            <span class="tag">Kokoro-82M</span><span class="tag">SpeechBrain</span><span class="tag">Python</span>
+          </div>
+        </article>
+
+        <!-- Ollama Series -->
+        <article class="project-card">
+          <div class="proj-top">
+            <span class="proj-name">Ollama Series</span>
+            <span class="proj-badge">Systems</span>
+          </div>
+          <p class="proj-desc">
+            Five scripts on local LLM inference with Ollama: streamed generation, multimodal vision, stateful chat,
+            think-block stripping, and repetition prevention. It continues into agentic function calling with a
+            CSV-backed inventory, then a CLI for Modelfile lifecycle management, model validation, offline
+            evaluation, and structured prompt benchmarking.
+          </p>
+          <div class="proj-stack">
+            <span class="tag">Ollama</span><span class="tag">Function Calling</span><span class="tag">VLM</span>
+            <span class="tag">Modelfiles</span><span class="tag">Pandas</span><span class="tag">Python</span>
+          </div>
+        </article>
+
+        <!-- Research ML Pipeline -->
+        <article class="project-card">
+          <div class="proj-top">
+            <span class="proj-name">Research ML Pipeline</span>
+            <span class="proj-badge">Research</span>
+          </div>
+          <p class="proj-desc">
+            ML and analytics workflows for materials science and literature analysis: a CatBoost regression
+            pipeline predicting supercapacitor capacitance from material, synthesis, and electrolyte features
+            (evaluated with Leave-One-Out Cross-Validation, diagnostic plots, and feature analysis), plus an
+            OpenAlex-based trend analyzer tracking publication volume for selected topics.
+          </p>
+          <div class="proj-stack">
+            <span class="tag">CatBoost</span><span class="tag">LOOCV</span><span class="tag">Scikit-learn</span>
+            <span class="tag">Pandas</span><span class="tag">OpenAlex API</span><span class="tag">Matplotlib</span>
+            <span class="tag">Python</span>
+          </div>
+        </article>
+
+        <!-- Mini -->
+        <article class="project-card">
+          <div class="proj-top">
+            <span class="proj-name">Mini</span>
+            <span class="proj-badge">Applications</span>
+          </div>
+          <p class="proj-desc">
+            Small utility apps exploring on-device ML pipelines and native macOS/iOS interfaces: a SwiftUI voice
+            summarisation app with a FastAPI backend (MLX-Whisper, Qwen3.5-9B) and a multilingual translation
+            prototype using Gemma-4B and MLX-Whisper for Spanish, French, and Italian.
+          </p>
+          <div class="proj-stack">
+            <span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">FastAPI</span>
+            <span class="tag">MLX-Whisper</span><span class="tag">MLX-VLM</span><span class="tag">MLX-audio</span>
+            <span class="tag">Python</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="research">
+        <h2 class="section-label">Research &amp; Publications</h2>
+        <article class="pub-card">
+          <div class="pub-title">Interface-Driven Electrochemical Performance of Hybrid MXenes for High-Performance Supercapacitors: Insights and Challenges</div>
+          <div class="pub-venue">Co-authored review · Current Opinion in Solid State &amp; Materials Science · 2026</div>
+          <div class="pub-role">Independently authored the AI methodology section.</div>
+          <span class="pub-status">Under review</span>
+        </article>
+      </section>
+
+      <section id="skills">
+        <h2 class="section-label">Technical Skills</h2>
+        <div class="skills">
+          <div class="skill-row"><span class="skill-label">Languages</span><span class="skill-val">Python, C++, Swift, SQL</span></div>
+          <div class="skill-row"><span class="skill-label">ML / AI</span><span class="skill-val">PyTorch, TensorFlow, MLX, MLX-VLM, Scikit-learn, CatBoost, OpenCV</span></div>
+          <div class="skill-row"><span class="skill-label">Systems</span><span class="skill-val">MLX Swift, SwiftUI, Apple Silicon inference, FastAPI, Ollama</span></div>
+          <div class="skill-row"><span class="skill-label">Data</span><span class="skill-val">NumPy, Pandas, Matplotlib, SQL (MySQL, PostgreSQL, MongoDB, SQLite)</span></div>
         </div>
+      </section>
 
-        <div class="about-cell">
-          <div class="about-cell-label">
-            CGPA
-          </div>
-
-          <div class="about-cell-val">
-            9.01
-          </div>
+      <section id="about">
+        <h2 class="section-label">About</h2>
+        <div class="about-grid">
+          <div class="about-cell"><div class="about-cell-label">Degree</div><div class="about-cell-val">B.Tech CSE-AI</div></div>
+          <div class="about-cell"><div class="about-cell-label">CGPA</div><div class="about-cell-val">9.01</div></div>
+          <div class="about-cell"><div class="about-cell-label">Minor</div><div class="about-cell-val">Quantum Technology · 10.00</div></div>
+          <div class="about-cell"><div class="about-cell-label">Institution</div><div class="about-cell-val">Punjab Engineering College, Chandigarh</div></div>
+          <div class="about-cell"><div class="about-cell-label">Expected Graduation</div><div class="about-cell-val">May 2028</div></div>
+          <div class="about-cell"><div class="about-cell-label">Languages</div><div class="about-cell-val">Punjabi · English · Hindi · Norwegian</div></div>
         </div>
+        <ul class="acc-list">
+          <li>Finalist, Amazon ML Summer School 2026</li>
+          <li>Published op-ed in <em>The Tribune</em> (2023)</li>
+        </ul>
+      </section>
 
-        <div class="about-cell">
-          <div class="about-cell-label">
-            Minor
-          </div>
-
-          <div class="about-cell-val">
-            Quantum Technology · 10.00
-          </div>
-        </div>
-
-        <div class="about-cell">
-          <div class="about-cell-label">
-            Institution
-          </div>
-
-          <div class="about-cell-val">
-            Punjab Engineering College, Chandigarh
-          </div>
-        </div>
-
-        <div class="about-cell">
-          <div class="about-cell-label">
-            Expected Graduation
-          </div>
-
-          <div class="about-cell-val">
-            May 2028
-          </div>
-        </div>
-
-        <div class="about-cell">
-          <div class="about-cell-label">
-            Languages
-          </div>
-
-          <div class="about-cell-val">
-            Punjabi · English · Hindi · Norwegian
-          </div>
-        </div>
-
-        <div class="about-cell">
-          <div class="about-cell-label">
-            Focus
-          </div>
-
-          <div class="about-cell-val">
-            On-device ML · Privacy-preserving AI
-          </div>
-        </div>
-      </div>
-    </section>
+    </main>
 
     <footer>
-      <span class="footer-copy">
-        © 2026 Ekamveer Singh
-      </span>
-
+      <span class="footer-copy">© 2026 Ekamveer Singh</span>
       <div class="footer-links">
-        <a
-          href="https://github.com/Cheese-Singh"
-          target="_blank"
-          rel="noopener"
-        >
-          GitHub
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/ekamveer-singh-278747326/"
-          target="_blank"
-          rel="noopener"
-        >
-          LinkedIn
-        </a>
-
-        <a href="mailto:ekamveer.singh06@gmail.com">
-          Email
-        </a>
+        <a href="https://github.com/Cheese-Singh" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/ekamveer-singh-278747326/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:ekamveer.singh06@gmail.com">Email</a>
       </div>
     </footer>
 
