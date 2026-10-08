@@ -727,32 +727,41 @@
             </span>
 
             <span class="proj-badge complete">
-              Phase II complete
+              Phase III complete
             </span>
           </div>
         </div>
 
         <p class="proj-desc">
           A research project studying how much LLM inference is actually needed
-          for reliable task completion. The central question is whether inference
-          can be dynamically stopped once a task has received sufficient reasoning
-          or verification.
-
+          for reliable task completion. The central question is whether a cascade
+          can dynamically stop once sufficient inference has been performed,
+          rather than always invoking the strongest available model.
+        
           The experimental system uses a four-model ladder consisting of
           gpt-oss-20b, gemma4, nemotron-3-super, and nemotron-3-ultra. Phase I
-          evaluated execution-gated escalation on a 100-problem code benchmark.
-          The first layer solved 90% of problems independently, while
-          execution-gated escalation reached 100% with only 8% of problems
-          requiring escalation; every escalation was resolved at the second layer.
-
-          Phase II characterized the minimum sufficient layer across hard coding,
-          mathematics, and finance tasks. All four layers were evaluated for every
-          problem in a contextual sequential setup, allowing the minimum layer
-          sufficient for each problem to be identified.
-
-          The results establish an empirical basis for moving from oracle-verified
-          escalation toward predictive routing: learning to estimate how much
-          inference a task requires before invoking stronger models.
+          evaluated execution-gated escalation on a 100-problem code benchmark,
+          reaching 100% accuracy with only 8% of problems requiring escalation.
+        
+          Phase II characterized the minimum sufficient layer across coding,
+          mathematics, and finance tasks through contextual sequential evaluation,
+          establishing oracle labels for the minimum inference depth required by
+          each problem.
+        
+          Phase III moves from oracle-verified escalation toward learned routing.
+          Using the TAT-QA dataset, a lightweight logistic-regression router was
+          trained on cheap observable response features including confidence,
+          answer similarity, response length, numeric density, reasoning structure,
+          and final-answer presence. The router predicts whether additional
+          inference is warranted without using an external LLM judge at inference.
+        
+          On a 50-question held-out evaluation, the learned router achieved
+          approximately 96% routing accuracy while reducing latency by about 76%
+          relative to always using the strongest model. Only one test question
+          reached the fourth layer. An additional finding was that self-reported
+          model confidence correlated negatively with correctness (−0.73),
+          highlighting the difficulty of using model confidence as a reliability
+          signal.
         </p>
 
         <div class="proj-stack">
