@@ -463,7 +463,7 @@
         especially at the inference layer: how much compute a problem actually needs,
         when to escalate to a stronger model, and how to verify answers so they can be
         trusted. I also build local-first inference on Apple Silicon and applied
-        computer vision systems.
+        computer vision systems, from clinical screening to compact image classifiers.
       </p>
       <div class="contact-row">
         <a class="chip" href="https://github.com/Cheese-Singh" target="_blank" rel="noopener">github/Cheese-Singh</a>
@@ -581,6 +581,34 @@
             <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span>
             <span class="tag">OpenCV</span><span class="tag">Scikit-image</span><span class="tag">Scikit-learn</span>
             <span class="tag">Random Forest</span><span class="tag">Computer Vision</span>
+          </div>
+        </article>
+
+        <!-- EVNet-Tiny -->
+        <article class="project-card research">
+          <div class="proj-top">
+            <span class="proj-name">EVNet-Tiny — Compact Hybrid Vision Network</span>
+            <div class="proj-badges">
+              <span class="proj-badge">Research · 2026</span>
+              <span class="proj-badge in-progress">Baselines pending</span>
+            </div>
+          </div>
+          <p class="proj-desc">
+            A 6.70M-parameter image classifier trained from scratch on Tiny ImageNet (64×64, 200 classes).
+            ConvNeXt-style blocks handle the high-resolution stages, and global self-attention is used only at
+            the final 8×8 stage, where it is cheap.
+          </p>
+          <div class="proj-desc">
+            <ul>
+              <li><strong>Result:</strong> 67.40% top-1 and 85.78% top-5 on the validation set (EMA weights, best epoch, single seed) at about 1.46 GMACs per image.</li>
+              <li><strong>Recipe:</strong> AdamW with warm-up and cosine decay, MixUp/CutMix, RandAugment, stochastic depth, LayerScale, and label smoothing, trained on a single T4.</li>
+              <li><strong>Caveats:</strong> validation loss rose after roughly epoch 100 (overfitting), and same-recipe ResNet-18/50 baselines are still to be run, so I make no accuracy claim against ResNet. A saliency-guided fractal-mixing fine-tune (S²-FracMix) gave no gain in the epochs run.</li>
+            </ul>
+          </div>
+          <div class="proj-stack">
+            <span class="tag">PyTorch</span><span class="tag">ConvNeXt</span><span class="tag">Self-Attention</span>
+            <span class="tag">Tiny ImageNet</span><span class="tag">Model EMA</span><span class="tag">MixUp / CutMix</span>
+            <span class="tag">Python</span>
           </div>
         </article>
 
