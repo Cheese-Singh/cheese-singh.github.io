@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ekamveer Singh</title>
-  <meta name="description" content="Ekamveer Singh — B.Tech CSE-AI at PEC Chandigarh. Reliable multi-model LLM systems and efficient, privacy-preserving on-device ML." />
+  <meta name="description" content="Ekamveer Singh — B.Tech CSE-AI at PEC Chandigarh. Inference-time reliability and efficiency for LLM systems: routing, verification, and local-first deployment." />
   <meta name="theme-color" content="#f9f8f6" />
   <meta property="og:title" content="Ekamveer Singh" />
-  <meta property="og:description" content="Building AI that runs where your data lives." />
+  <meta property="og:description" content="Making LLM inference reliable, efficient, and no bigger than it needs to be." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -457,12 +457,13 @@
 
     <header class="hero">
       <div class="hero-eyebrow">B.Tech CSE · AI — PEC Chandigarh</div>
-      <h1>Building AI that runs<br /><em>where your data lives.</em></h1>
+      <h1>Making LLM inference<br /><em>reliable, efficient, and no bigger than it needs to be.</em></h1>
       <p class="hero-bio">
-        I work on the reliability of multi-modal LLM systems and on efficient,
-        privacy-preserving on-device inference — from cascaded verification and
-        escalation strategies to low-level model exploration on Apple Silicon and
-        applied computer vision.
+        I’m interested in large language models and how they are built and deployed,
+        especially at the inference layer: how much compute a problem actually needs,
+        when to escalate to a stronger model, and how to verify answers so they can be
+        trusted. I also build local-first inference on Apple Silicon and applied
+        computer vision systems.
       </p>
       <div class="contact-row">
         <a class="chip" href="https://github.com/Cheese-Singh" target="_blank" rel="noopener">github/Cheese-Singh</a>
@@ -482,8 +483,8 @@
             Robustness, and verification and escalation strategies that reduce hallucination and error in cascaded pipelines.
           </li>
           <li>
-            <strong>Efficient, on-device, privacy-preserving inference</strong>
-            Running capable models locally, with routing that decides when stronger (or cloud) models are actually needed.
+            <strong>Efficient, local-first inference</strong>
+            Running capable models on-device where possible, with learned routing that decides when a stronger (or cloud) model is actually needed.
           </li>
         </ul>
       </section>
@@ -501,7 +502,7 @@
             </div>
           </div>
           <p class="proj-desc">
-            A fully local, privacy-first, agentic voice assistant for Apple Silicon, with a native SwiftUI interface
+            A local-first, privacy-aware agentic voice assistant for Apple Silicon, with a native SwiftUI interface
             and a Python/FastAPI backend. It grew out of the MLX exploration series and was built independently
             across 15 progressive stages.
           </p>
@@ -528,30 +529,32 @@
             <span class="proj-name">LLM Cascade — Minimum Sufficient Inference</span>
             <div class="proj-badges">
               <span class="proj-badge">Research · 2026</span>
-              <span class="proj-badge complete">Phase III complete</span>
+              <span class="proj-badge complete">Phase IV complete</span>
             </div>
           </div>
           <p class="proj-desc">
             How much LLM inference is actually needed for reliable task completion? This project tests whether a
             cascade can stop once enough inference has been done, instead of always calling the strongest model.
             The ladder is gpt-oss-20b → gemma4 → nemotron-3-super → nemotron-3-ultra, and stronger layers receive
-            the failed candidate and objective execution feedback.
+            the failed candidate and verification feedback.
           </p>
           <div class="proj-desc">
             <ul>
               <li><strong>Phase I:</strong> sandboxed harness over 100 code problems with deterministic tests. L1 alone reached 90%; execution-gated escalation reached 100% while escalating only 8% of problems (all resolved at L2), with mean tokens rising from 693 to 808 per query.</li>
               <li><strong>Phase II:</strong> contextual sequential evaluation across coding, mathematics, and finance, establishing oracle labels for the minimum sufficient layer per problem.</li>
-              <li><strong>Phase III:</strong> a logistic-regression router trained on cheap response features (confidence, answer similarity, length, numeric density, reasoning structure, final-answer presence) on TAT-QA, with no LLM judge at inference. On 50 held-out questions it reached about 96% routing accuracy and cut latency by about 76% versus always using the strongest model.</li>
-              <li><strong>Finding:</strong> self-reported confidence correlated negatively with correctness (−0.73), so it is a poor reliability signal.</li>
+              <li><strong>Phase III:</strong> a logistic-regression router trained on cheap response features (confidence, answer similarity, length, numeric density, reasoning structure, final-answer presence) on TAT-QA, with no LLM judge at inference. On 50 held-out questions it reached 96% accuracy (Always-L1: 94%) with about 80% lower latency than always using the strongest model. A 4% false-stop rate remained the open problem.</li>
+              <li><strong>Phase IV:</strong> a four-tier cascade over 120 financial-audit queries (51/26/43 train/validation/test) with a learned router that uses runtime signals only, so no gold answers are available at inference. On the 43 held-out cases it reached 100% accuracy at about 4.2k tokens per case, versus 74.4% for always using the largest model at about 9.5k. That figure was 86% before six verifier and judge false rejections were fixed, so treat it as test-informed.</li>
+              <li><strong>Findings:</strong> self-reported confidence correlated negatively with correctness (−0.73), making it a poor reliability signal. On audit queries, the largest model over-answered when evidence was missing instead of abstaining, so bigger was not always better.</li>
             </ul>
           </div>
           <div class="proj-stack">
             <span class="tag">LLM Routing</span><span class="tag">Minimum Sufficient Inference</span>
-            <span class="tag">Logistic Regression</span><span class="tag">TAT-QA</span><span class="tag">Ollama</span>
-            <span class="tag">Python</span><span class="tag">Evaluation Harness</span><span class="tag">Weak-to-Strong Inference</span>
+            <span class="tag">Logistic Regression</span><span class="tag">TAT-QA</span>
+            <span class="tag">Runtime Verification</span><span class="tag">Financial Audit QA</span>
+            <span class="tag">Ollama</span><span class="tag">Python</span><span class="tag">Evaluation Harness</span>
           </div>
           <div class="proj-footer">
-            <a class="proj-link" href="https://github.com/Cheese-Singh/LLM-Cascade" target="_blank" rel="noopener">View Phase I–III on GitHub ↗</a>
+            <a class="proj-link" href="https://github.com/Cheese-Singh/LLM-Cascade" target="_blank" rel="noopener">View Phase I–IV on GitHub ↗</a>
           </div>
         </article>
 
